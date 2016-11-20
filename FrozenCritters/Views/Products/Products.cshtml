@@ -1,0 +1,27 @@
+﻿
+@model List<FrozenCritters.Models.Products>
+@{
+    ViewBag.Title = "Products";
+    //Takes the category name of one of the products to use for the category name on the page
+    var categoryName = FrozenCritters.Models.FrozenCrittersDb.GetCategory(Model[0].CategoriesId);
+}
+
+<h2>@categoryName.CategoriesName</h2>
+
+<ul class="products">
+
+    @foreach (var prod in Model)
+    {
+        <li>
+            <a class="productHover" href="@Url.Action("IndividualProductsPage", "Products", new { id = prod.ProductsId }, null)">
+                <img src="~/content/img/@prod.ProductsPhoto" alt="@prod.ProductsName" />
+                <h4 class="productName">@prod.ProductsName</h4>
+                @if (prod.ProductsSalePrice > 0)
+                {<div class="prices"><span class="fullPrice">$@prod.ProductsPrice</span><span>     </span><span class="salePrice">$@prod.ProductsSalePrice</span></div> }
+                else
+                { <div class="prices"><p class="productPrice">$@prod.ProductsPrice</p></div>}
+            </a>
+        </li>
+    }
+
+</ul>

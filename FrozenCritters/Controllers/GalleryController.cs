@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace FrozenCritters.Controllers
 {
-    public class HomeController : Controller
+    public class GalleryController : Controller
     {
-        // GET: Home
-        public ActionResult Index()
+        // GET: Gallery
+        public ActionResult Gallery()
         {
             return View();
         }

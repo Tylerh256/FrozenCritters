@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = Model.ProductsName;
+}
+@*<script src="~/Content/JavaScript.js"></script>*@
+<div id="indiProductContainer">
+    <div id="photos">
+        <div id="mainPhotoContainer">
+            <img id="mainPhoto" src="~/Content/img/@Model.ProductsPhoto" alt="@Model.ProductsName" />
+        </div>
+        <div id="altPhotoContainer">
+            @if (Model.ProductsPhoto2 != "")
+            {
+                <img id="altPhoto2" class="altPhotos" onmouseover="altPhoto2()" onmouseout="defaultPhoto()" src="/Content/img/@Model.ProductsPhoto2" alt="@Model.ProductsName" />
+            }
+            @if (Model.ProductsPhoto3 != "")
+            {
+                <img id="altPhoto3" class="altPhotos" onmouseover="altPhoto3()" onmouseout="defaultPhoto()" src="/Content/img/@Model.ProductsPhoto3" alt="@Model.ProductsName" />
+            }
+            @if (Model.ProductsPhoto4 != "")
+            {
+                <img id="altPhoto4" class="altPhotos" onmouseover="altPhoto4()" onmouseout="defaultPhoto()" src="/Content/img/@Model.ProductsPhoto4" alt="@Model.ProductsName" />
+            }
+            @if (Model.ProductsPhoto5 != "")
+            {
+                <img id="altPhoto5" class="altPhotos" onmouseover="altPhoto5()" onmouseout="defaultPhoto()" src="/Content/img/@Model.ProductsPhoto5" alt="@Model.ProductsName" />
+            }
+        </div>
+    </div>
+
+    <div id="productDetails">
+        <p id="indiProductName">@Model.ProductsName</p>
+        @if (Model.ProductsSalePrice > 0)
+        {<span id="indiProductFullPriceSale">$@Model.ProductsPrice</span><span>     </span><span id="indiProductSalePrice">$@Model.ProductsSalePrice</span> }
+        else
+        { <p id="indiProductFullPrice">$@Model.ProductsPrice</p>}
+        <br />
+        <br />
+        <span id="indiProductQuantity">In Stock: @Model.ProductsQuantity</span>
+        <br />
+        <br />
+        <span id="indiProductDescription">Description: @Model.ProductsDescription</span>
+    </div>
+</div>
+@section scripts{
+    <script>
+
+        function defaultPhoto() {
+            document.getElementById("mainPhoto").src = "/Content/img/@Model.ProductsPhoto";
+
+        }
+
+        function altPhoto2() {
+            document.getElementById("mainPhoto").src = "/Content/img/@Model.ProductsPhoto2";
+
+        }
+
+        function altPhoto3() {
+            document.getElementById("mainPhoto").src = "/Content/img/@Model.ProductsPhoto3";
+
+        }
+
+        function altPhoto4() {
+            document.getElementById("mainPhoto").src = "/Content/img/@Model.ProductsPhoto4";
+
+        }
+
+        function altPhoto5() {
+            document.getElementById("mainPhoto").src = "/Content/img/@Model.ProductsPhoto5";
+
+        }
+
+        $("#altPhoto2").ready.this(function () {
+
+        })
+    </script>
+}
+
+
+

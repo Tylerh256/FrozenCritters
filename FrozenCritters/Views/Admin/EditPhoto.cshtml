@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "PhotoForm";
+    var photos = FrozenCritters.Models.FrozenCrittersDb.GetAllPhotos();
+}
+<h2>Edit Photos</h2>
+<ul>
+    @foreach (var photo in photos)
+    {
+        <li class="editProductList">@Html.ActionLink(photo.PhotosName, "PhotoForm", "Admin", new { id = photo.PhotosId }, null) </li>
+    }
+</ul>

@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Edit News";
+    var news = FrozenCritters.Models.FrozenCrittersDb.GetAllNews();
+}
+<h2>Edit News</h2>
+<ul>
+    @foreach (var newsitem in news)
+    {
+        <li class="editProductList">@Html.ActionLink(newsitem.NewsTitle, "NewsForm", "Admin", new { id = newsitem.NewsId }, null) </li>
+    }
+</ul>

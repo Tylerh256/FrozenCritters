@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "RemoveCategoryList";
+    var cats = FrozenCritters.Models.FrozenCrittersDb.GetCategories();
+}
+<h2>Choose a Category to Delete</h2>
+<ul>
+    @foreach (var cat in cats)
+    {
+        <li class="editProductList">@Html.ActionLink(cat.CategoriesName, "ConfirmRemoveCategory", "Admin", new { id = cat.CategoriesId }, null) </li>
+    }
+</ul>

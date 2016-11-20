@@ -1,0 +1,260 @@
+﻿body {
+    width:70%;
+    margin:0 auto;
+    padding:0;
+}
+
+#LogIn{
+    float:left;
+    font-size:20px;
+    padding:15px;
+    font-family:Arial;
+}
+
+.LogIn2{
+    float:left;
+    font-size:20px;
+    padding:15px;
+    font-family:Arial;
+}
+
+#cart{
+    float:right;
+    font-size:20px;
+    padding:15px;
+    font-family:Arial;
+}
+
+#header{
+    padding:0;
+    margin:0;
+    border-bottom:black solid;
+}
+
+#header1{
+    font-family:'Bell MT';
+    font-size:115px;
+    color:black;
+    text-align:center;
+    padding:0;
+    margin:0 auto;
+    white-space:nowrap;
+}
+
+#header2{
+    font-family:'Bell MT';
+    font-size:45px;
+    color:black;
+    text-align:center;
+    margin-top:-50px;
+}
+
+#myCarousel img{
+    max-height:25%;
+    max-width:100%;
+    width:auto;
+    height:auto;
+}
+
+#myCarousel{
+    margin:0 auto;
+    max-height:25%;
+    max-width:80%;
+    width:auto;
+    height:auto;
+    display:block;
+    overflow:hidden;
+}
+
+#bodyWrapper{
+    text-align:center;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+    font-family:'Bell MT';
+    background-color:white;
+    font-size:20px;
+}
+
+ul li{
+    display: inline-block;
+    position: relative;
+    line-height: 21px;
+    text-align: left;
+}
+
+ul li a{
+    display: block;
+    padding: 8px 25px;
+    color: #333;
+    text-decoration: none;
+}
+
+ul li a:hover{
+    color:white;
+    background-color:black;
+}
+
+ul li ul.dropdown{
+    min-width: 100%; /* Set width of the dropdown */
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+}
+
+ul li:hover ul.dropdown{
+    display: block;	/* Display the dropdown */
+}
+
+ul li ul.dropdown li{
+    display: block;
+}
+
+#featuredSaleItems{
+    text-align:center;
+    font-size:42px;
+    font-family:'Bell MT';
+    text-decoration:underline;
+}
+
+ul.products{
+	margin: 0 auto;	
+	padding: 0;
+	text-align: center;
+    display:flex;
+    flex-flow:wrap;
+    justify-content:space-around;
+}
+
+ul.products li{
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px;
+    display:flex;
+    flex-flow:wrap;
+    justify-content:space-around;
+}
+
+.productHover{
+	border-style: solid;
+	border-color: #000;
+}
+
+.productName{
+    font-size:25px;
+    font-family:Arial;
+    text-align:center;
+}
+
+.productPrice{
+    font-size:20px;
+    font-family:Arial;
+}
+
+.productDescription{
+    font-size:15px;
+    font-family:Arial;
+}
+
+img{
+	width:190px;
+}
+
+#newsHeadline{
+    text-align:center;
+    font-size:42px;
+    font-family:'Bell MT';
+    text-decoration:underline;
+}
+
+.nav navbar-nav{
+    background-color:white;
+    color:black;
+}
+
+.prices{
+    text-align:center;
+}
+
+.fullPrice{
+    text-decoration:line-through;
+    font-size:20px;
+    font-family:Arial;
+    text-align:center;
+}
+
+.salePrice{
+    color:red;
+    font-size:20px;
+    font-family:Arial;
+    text-align:center;
+
+}
+
+#indiProductContainer{
+    flex-flow:wrap;
+    justify-content:space-between;
+}
+
+#photos{
+    width:500px;
+    float:left;
+}
+
+#mainPhoto{
+    padding-bottom:10px;
+    width:500px;
+}
+
+.altPhotoContainer{
+    flex-flow:wrap;
+    justify-content:space-around;
+}
+
+.altPhotos{
+    width:100px;
+}
+
+#productDetails{
+    float:right;
+    width:500px;
+}
+
+#indiProductName{
+    font-size:60px;
+}
+
+#indiProductFullPriceSale{
+    font-size:35px;
+    text-decoration:line-through;
+}
+
+#indiProductFullPrice{
+    font-size:35px;
+}
+
+#indiProductSalePrice{
+    color:red;
+    font-size:35px;
+}
+
+#indiProductPrice{
+    font-size:35px;
+}
+
+#indiProductQuantity{
+    font-size:15px;
+}
+
+#indiProductDescription{
+    font-size:15px;
+}
+
+#copyright{
+    text-align:center;
+    padding-top:50px;
+}

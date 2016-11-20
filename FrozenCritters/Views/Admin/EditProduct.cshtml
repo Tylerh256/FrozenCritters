@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Select Product";
+    var prods = FrozenCritters.Models.FrozenCrittersDb.GetProducts();
+}
+<h2>Select Product</h2>
+<ul>
+    @{
+        foreach (var prod in prods)
+        {
+            <li class="editProductList">@Html.ActionLink(prod.ProductsName, "ProductForm", "Admin", new { id = prod.ProductsId }, null) </li>
+        }
+    }
+</ul>
