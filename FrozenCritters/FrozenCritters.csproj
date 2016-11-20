@@ -204,6 +204,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611200721304_Admin Role Added.cs" />
+    <Compile Include="Migrations\201611200721304_Admin Role Added.Designer.cs">
+      <DependentUpon>201611200721304_Admin Role Added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\FrozenCrittersDb.cs" />
@@ -212,6 +217,7 @@
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Photos.cs" />
     <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\RoleAction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\AddCategoriesViewModel.cs" />
@@ -316,6 +322,11 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611200721304_Admin Role Added.resx">
+      <DependentUpon>201611200721304_Admin Role Added.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

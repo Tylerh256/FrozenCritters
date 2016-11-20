@@ -9,6 +9,7 @@ using FrozenCritters.Models;
 
 namespace FrozenCritters.Controllers
 {
+    [Authorize(Roles = Models.RoleAction.Admin)]
     public class AdminController : Controller
     {
         // GET: Admin
