@@ -31,7 +31,7 @@ namespace FrozenCritters.Migrations
             //    );
             //
             CreateRoles(context, RoleAction.Admin);
-            CreateDefaultAdmin(context, "Russell@hawks.com");
+            CreateDefaultAdmin(context, "Russell@hawks.com"); //Default Admin Username
         }
 
         private void CreateDefaultAdmin(ApplicationDbContext db, string username)
@@ -46,7 +46,7 @@ namespace FrozenCritters.Migrations
                     Email = username,
                     EmailConfirmed = true
                 };
-                userManager.Create(user, "Admin123");
+                userManager.Create(user, "Admin123"); //Default Admin Password
                 userManager.AddToRole(user.Id, RoleAction.Admin);
             }
         }
@@ -68,7 +68,5 @@ namespace FrozenCritters.Migrations
                 }
             }
         }
-
-
     }
 }

@@ -7,6 +7,7 @@ using FrozenCritters.Models;
 
 namespace FrozenCritters.Controllers
 {
+    [RequireHttps]
     public class ProductsController : Controller
     {
         [HttpGet]

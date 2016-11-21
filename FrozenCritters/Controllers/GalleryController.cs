@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace FrozenCritters.Controllers
 {
+    [RequireHttps]
     public class GalleryController : Controller
     {
         // GET: Gallery
