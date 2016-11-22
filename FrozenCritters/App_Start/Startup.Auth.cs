@@ -58,11 +58,11 @@ namespace FrozenCritters
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "AIzaSyD3uByfJkhDECaSEOseyiB02mRVy-2zBbE",
-            //    ClientSecret = "API key 1"
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "143697038685-ehl05jb8is47bhdkosl0ajodk0snvv9c.apps.googleusercontent.com",
+                ClientSecret = "_rGxYh7D2CdHZrBTkSqJ6Xxe"
+            });
         }
     }
 }

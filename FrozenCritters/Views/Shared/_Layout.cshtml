@@ -1,6 +1,6 @@
-﻿@{
+﻿@*@{
     var cats = FrozenCritters.Models.FrozenCrittersDb.GetCategories();
-}
+}*@
 
 
 <!DOCTYPE html>
@@ -46,10 +46,10 @@
             <li>
                 <a href="#">Products</a>
                 <ul class="dropdown">
-                    @foreach (var cat in cats)
+                    @*@foreach (var cat in cats)
                     {
                         <li>@Html.ActionLink(cat.CategoriesName, "Products", "Products", new { id = cat.CategoriesId }, null)</li>
-                    }
+                    }*@
                 </ul>
             </li>
             <li>@Html.ActionLink("Gallery", "Gallery", "Gallery")</li>
