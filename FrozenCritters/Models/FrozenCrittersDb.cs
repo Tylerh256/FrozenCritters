@@ -402,7 +402,7 @@ namespace FrozenCritters.Models
             SqlConnection con = new SqlConnection(conString);
             SqlCommand editProd = new SqlCommand();
             editProd.Connection = con;
-            editProd.CommandText = "UPDATE Products SET ProductsName = @ProductsName, ProductsDescription = @ProductsDescription, ProductsPrice = @ProductsPrice, ProductsSalePrice = @ProductsSalePrice, ProductsQuantity = @ProductsQuantity, ProductsFeature = @ProductsFeature, ProductsFeatureSale = @ProductsFeatureSale, ProductsPhoto = @ProductsPhoto, ProductsPhoto2 = @ProductsPhoto2, ProductsPhoto3 = @ProductsPhoto3, ProductsPhoto4 = @ProductsPhoto4, ProductsPhoto5 = @ProductsPhoto5 WHERE ProductsId = " + id;
+            editProd.CommandText = "UPDATE Products SET ProductsName = @ProductsName, ProductsDescription = @ProductsDescription, ProductsPrice = @ProductsPrice, ProductsSalePrice = @ProductsSalePrice, ProductsQuantity = @ProductsQuantity, ProductsFeature = @ProductsFeature, ProductsFeatureSale = @ProductsFeatureSale, CategoriesId = @CategoriesID, ProductsPhoto = @ProductsPhoto, ProductsPhoto2 = @ProductsPhoto2, ProductsPhoto3 = @ProductsPhoto3, ProductsPhoto4 = @ProductsPhoto4, ProductsPhoto5 = @ProductsPhoto5 WHERE ProductsId = " + id;
             editProd.Parameters.AddWithValue("@ProductsName", product.ProductsName);
             editProd.Parameters.AddWithValue("@ProductsDescription", product.ProductsDescription);
             editProd.Parameters.AddWithValue("@ProductsPrice", product.ProductsPrice);
@@ -418,6 +418,7 @@ namespace FrozenCritters.Models
             editProd.Parameters.AddWithValue("@ProductsQuantity", product.ProductsQuantity);
             editProd.Parameters.AddWithValue("@ProductsFeature", product.ProductsFeature);
             editProd.Parameters.AddWithValue("@ProductsFeatureSale", product.ProductsFeatureSale);
+            editProd.Parameters.AddWithValue("@CategoriesId", product.CategoriesId);
             if (product.ProductsPhoto != null)
             {
                 editProd.Parameters.AddWithValue("@ProductsPhoto", product.ProductsPhoto);

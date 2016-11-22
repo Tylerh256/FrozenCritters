@@ -23,7 +23,7 @@ namespace FrozenCritters.Controllers
         public ActionResult AddProduct(Products product)
         {
             var allowedExtensions = new[] { ".png", ".jpg" };
-            
+
             if (ModelState.IsValid)
             {
                 HttpPostedFileBase hpf = Request.Files[0];
@@ -125,7 +125,7 @@ namespace FrozenCritters.Controllers
             if (ModelState.IsValid)
             {
 
-                if (Request.Files.Count > 0)
+                if (Request.Files.Count > 0 || Request.Files.Count != 0)
                 {
                     HttpPostedFileBase hpf = Request.Files[0];
 
@@ -136,7 +136,7 @@ namespace FrozenCritters.Controllers
                     }
                     else
                     {
-                        product.ProductsPhoto = null;
+                        product.ProductsPhoto = prod.ProductsPhoto;
                     }
 
                     if (Request.Files[1].ContentLength > 0)
@@ -147,7 +147,7 @@ namespace FrozenCritters.Controllers
                     }
                     else
                     {
-                        product.ProductsPhoto2 = null;
+                        product.ProductsPhoto2 = prod.ProductsPhoto2;
                     }
 
                     if (Request.Files[2].ContentLength > 0)
@@ -158,7 +158,7 @@ namespace FrozenCritters.Controllers
                     }
                     else
                     {
-                        product.ProductsPhoto3 = null;
+                        product.ProductsPhoto3 = prod.ProductsPhoto3;
                     }
 
                     if (Request.Files[3].ContentLength > 0)
@@ -169,7 +169,7 @@ namespace FrozenCritters.Controllers
                     }
                     else
                     {
-                        product.ProductsPhoto4 = null;
+                        product.ProductsPhoto4 = prod.ProductsPhoto4;
                     }
 
                     if (Request.Files[4].ContentLength > 0)
@@ -180,16 +180,9 @@ namespace FrozenCritters.Controllers
                     }
                     else
                     {
-                        product.ProductsPhoto5 = null;
+                        product.ProductsPhoto5 = prod.ProductsPhoto5;
+
                     }
-                }
-                else
-                {
-                    product.ProductsPhoto = prod.ProductsPhoto;
-                    product.ProductsPhoto2 = prod.ProductsPhoto2;
-                    product.ProductsPhoto3 = prod.ProductsPhoto3;
-                    product.ProductsPhoto4 = prod.ProductsPhoto4;
-                    product.ProductsPhoto5 = prod.ProductsPhoto5;
                 }
             }
 

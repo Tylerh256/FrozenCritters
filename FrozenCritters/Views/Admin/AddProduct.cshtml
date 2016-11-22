@@ -69,14 +69,16 @@
         <div class="form-group">
             <label class="control-label col-md-2" for="Categories">Categories: </label>
             <div class="col-md-10">
-                <select class="form-control" id="sel1" name="Categories">
+                <select class="form-control" id="CategoriesId" name="CategoriesId">
                     @foreach (var cat in cats)
                     {
-                        <option value="cat.CategoriesId">@cat.CategoriesName</option>
+                        <option value="@cat.CategoriesId" id="@cat.CategoriesId" name="CategoriesId">@cat.CategoriesName</option>
                     }
                 </select>
             </div>
         </div>
+
+
         <div class="form-group">
             <div class="col-md-10">
                 <input type="file" name="ProductsPhoto" />
