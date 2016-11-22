@@ -258,3 +258,35 @@ img{
     text-align:center;
     padding-top:50px;
 }
+
+.checkboxPosition{
+    float:left;
+}
+
+.rememberMe{
+    text-align:center;
+    
+}
+
+.registerFormContainer{
+    margin:0 auto;
+}
+
+.registerForm{
+    width:500px;
+    clear:both;
+    margin:0 auto;
+}
+
+.registerForm input{
+    width:100%;
+    clear:both;
+}
+
+.registerButton{
+    text-align:center;
+}
+
+#userALocalAccount{
+    font-weight:bold;
+}

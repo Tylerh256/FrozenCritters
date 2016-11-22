@@ -56,7 +56,7 @@
             <li>@Html.ActionLink("About", "About", "Home")</li>
             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
             <li>@Html.ActionLink("Laws", "Laws", "Home")</li>
-            <li>@Html.ActionLink("Links", "Links", "Home")</li>
+            @if (Request.IsAuthenticated) {<li>@Html.ActionLink("Admin", "Index", "Admin")</li> }
         </ul>
 
         <div class="container body-content">
