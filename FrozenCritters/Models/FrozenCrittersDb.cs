@@ -396,6 +396,25 @@ namespace FrozenCritters.Models
             return prod;
         }
 
+        public static ViewModel.CheckoutProductViewModel getCheckoutProd(int id)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand getProd = new SqlCommand();
+            getProd.Connection = con;
+            getProd.CommandText = "SELECT ProductsId, ProductsName, ProductsQuantity FROM Products WHERE ProductsId = " + id;
+            con.Open();
+            SqlDataReader reader = getProd.ExecuteReader();
+            ViewModel.CheckoutProductViewModel prod = new ViewModel.CheckoutProductViewModel();
+            while (reader.Read())
+            {
+                prod.ProductsId = (int)reader["ProductsId"];
+                prod.ProdcutsName = reader["ProductsName"].ToString();
+                prod.ProductsQuantity = (int)reader["ProductsQuantity"];
+            }
+            return prod;
+        }
+
         public static bool EditProduct(Models.Products product, int id)
         {
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;

@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using FrozenCritters.Models;
 using System.Web.SessionState;
+using System.Web.Helpers;
+using Newtonsoft.Json;
 
 namespace FrozenCritters.Controllers
 {
@@ -27,9 +29,9 @@ namespace FrozenCritters.Controllers
 
         public ActionResult PostAddToCartPage(int id)
         {
-            Products prod = Models.FrozenCrittersDb.GetProd(id);
-            //Request.Cookies["cart"].Values[prod.ProductsName] = prod.ProductsId.ToString();
-            Session.Add(prod.ProductsName, prod.ProductsId);
+            ViewModel.CheckoutProductViewModel prod = Models.FrozenCrittersDb.getCheckoutProd(id);
+            string json = JsonConvert.SerializeObject(prod);
+            Request.Cookies["cart"][prod.ProdcutsName] = json;
             return View(prod);
         }
 
