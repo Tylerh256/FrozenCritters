@@ -12,6 +12,8 @@ namespace FrozenCritters.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            //HttpCookie cart = new HttpCookie("cart");
+            //Response.Cookies.Add(cart);
             return View();
         }
     }

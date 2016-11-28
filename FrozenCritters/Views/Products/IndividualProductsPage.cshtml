@@ -40,6 +40,9 @@
         <br />
         <br />
         <span id="indiProductDescription">Description: @Model.ProductsDescription</span>
+        <br />
+        <br />
+        @Html.ActionLink("Add to Cart!", "PostAddToCartPage", "Products", new { id = Model.ProductsId }, null)
     </div>
 </div>
 @section scripts{

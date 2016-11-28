@@ -263,14 +263,18 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Categories.cs" />
     <Compile Include="Models\FrozenCrittersDb.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Photos.cs" />
     <Compile Include="Models\Products.cs" />
     <Compile Include="Models\RoleAction.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModel\AddCategoriesViewModel.cs" />
@@ -362,6 +366,8 @@
     <Content Include="Views\Products\Products.cshtml" />
     <Content Include="Views\Products\IndividualProductsPage.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Products\PostAddToCartPage.cshtml" />
+    <Content Include="Views\Products\ShoppingCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
