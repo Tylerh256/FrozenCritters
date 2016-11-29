@@ -9,7 +9,7 @@ namespace FrozenCritters.ViewModel
     {
         public int ProductsId { get; set; }
 
-        public string ProdcutsName { get; set; }
+        public string ProductsName { get; set; }
 
         public int ProductsQuantity { get; set; }
     }

@@ -283,6 +283,7 @@ namespace FrozenCritters.Models
                 cat.CategoriesName = reader["CategoriesName"].ToString();
                 cats.Add(cat);
             }
+            con.Close();
             return cats;
         }
 
@@ -301,6 +302,7 @@ namespace FrozenCritters.Models
                 cat.CategoriesId = (int)reader["CategoriesId"];
                 cat.CategoriesName = reader["CategoriesName"].ToString();
             }
+            con.Close();
             return cat;
         }
 
@@ -409,7 +411,7 @@ namespace FrozenCritters.Models
             while (reader.Read())
             {
                 prod.ProductsId = (int)reader["ProductsId"];
-                prod.ProdcutsName = reader["ProductsName"].ToString();
+                prod.ProductsName = reader["ProductsName"].ToString();
                 prod.ProductsQuantity = (int)reader["ProductsQuantity"];
             }
             return prod;
