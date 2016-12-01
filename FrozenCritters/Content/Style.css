@@ -198,21 +198,23 @@ img{
 #indiProductContainer{
     flex-flow:wrap;
     justify-content:space-between;
+    padding:0;
+    min-width:900px;
 }
 
 #photos{
-    width:500px;
+    width:450px;
     float:left;
 }
 
 #mainPhoto{
     padding-bottom:10px;
-    width:500px;
+    width:100%;
 }
 
 .altPhotoContainer{
     flex-flow:wrap;
-    justify-content:space-around;
+    justify-content:space-between;
 }
 
 .altPhotos{
@@ -221,11 +223,11 @@ img{
 
 #productDetails{
     float:right;
-    width:500px;
+    width:450px;
 }
 
 #indiProductName{
-    font-size:60px;
+    font-size:50px;
 }
 
 #indiProductFullPriceSale{
