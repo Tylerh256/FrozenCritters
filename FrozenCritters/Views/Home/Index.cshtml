@@ -13,6 +13,7 @@
         <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
     <!-- Wrapper for slides -->
+
     <div class="carousel-inner" role="listbox">
         <div class="item active">
             <img src="~/Content/img/photoshoppedskull.jpg" alt="skull1">
@@ -58,7 +59,7 @@
 @foreach (var n in news)
 {
     <div class="news">
-        <p class="newsHeadLine"><span class="newsDate">@n.NewsPostDate.Date.Month @n.NewsPostDate.Day @n.NewsPostDate.Year</span> - @n.NewsTitle</p>
+        <p class="newsHeadLine"><span class="newsDate">@n.NewsPostDate.Date.Month/@n.NewsPostDate.Day/@n.NewsPostDate.Year</span> - @n.NewsTitle</p>
         <p>@n.NewsDescription</p>
     </div>
 }
