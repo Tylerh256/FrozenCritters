@@ -421,7 +421,7 @@ namespace FrozenCritters.Models
             getProds.Connection = con;
             getProds.CommandText = "SELECT * FROM Products WHERE ProductsFeatureSale > 0";
             con.Open();
-            SqlDataReader reader = getProds.ExecuteReader();         
+            SqlDataReader reader = getProds.ExecuteReader();
             List<Products> prods = new List<Products>();
             while (reader.Read())
             {
@@ -774,6 +774,104 @@ namespace FrozenCritters.Models
                 contact.ContactHours = reader["ContactHours"].ToString();
             }
             return contact;
+        }
+
+        public static bool AddLaw(Laws law)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand addnews = new SqlCommand();
+            addnews.Connection = con;
+            addnews.CommandText = "INSERT INTO Laws (LawsTitle, LawsLink) VALUES(@LawsTitle, @LawsLink)";
+            con.Open();
+            addnews.Parameters.AddWithValue("@LawsTitle", law.LawsTitle);
+            addnews.Parameters.AddWithValue("@LawsLink", law.LawsLink);
+
+            try
+            {
+                con.Open();
+                int rows = addnews.ExecuteNonQuery();
+                if (rows == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                con.Dispose();
+            }
+        }
+
+        public static bool EditLaw(Laws law, int id)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand addnews = new SqlCommand();
+            addnews.Connection = con;
+            addnews.CommandText = "UPDATE Laws SET LawsTitle = @LawsTitle, LawsLink = @LawsLink WHERE LawsId = " + id;
+            con.Open();
+            addnews.Parameters.AddWithValue("@LawsTitle", law.LawsTitle);
+            addnews.Parameters.AddWithValue("@LawsLink", law.LawsLink);
+
+            try
+            {
+                con.Open();
+                int rows = addnews.ExecuteNonQuery();
+                if (rows == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                con.Dispose();
+            }
+        }
+
+        public static List<Laws> GetLaws()
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCritters"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand getNews = new SqlCommand();
+            getNews.Connection = con;
+            getNews.CommandText = "SELECT * FROM Laws";
+            con.Open();
+            SqlDataReader reader = getNews.ExecuteReader();
+            List<Laws> laws = new List<Laws>();
+            while (reader.Read())
+            {
+                Laws law = new Laws();
+                law.LawsId = (int)reader["LawsId"];
+                law.LawsTitle = reader["LawsTitle"].ToString();
+                law.LawsLink = reader["LawsLink"].ToString();
+                laws.Add(law);
+            }
+            return laws;
+        }
+
+        public static Laws GetLaw(int id)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand getlaw = new SqlCommand();
+            getlaw.Connection = con;
+            getlaw.CommandText = "SELECT LawsId, LawsTitle, LawsLink FROMM laws WHERE LawsId = " + id;
+            con.Open();
+            SqlDataReader reader = getlaw.ExecuteReader();
+            Laws law = new Laws();
+            law.LawsId = (int)reader["LawsId"];
+            law.LawsTitle = reader["LawsTitle"].ToString();
+            law.LawsLink = reader["LawsLink"].ToString();
+
+            return law;
         }
     }
 }

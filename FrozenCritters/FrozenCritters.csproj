@@ -269,6 +269,7 @@
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\FrozenCrittersDb.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Laws.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\News.cs" />
     <Compile Include="Models\Order.cs" />
@@ -373,6 +374,9 @@
     <Content Include="Views\Admin\UpdateAbout.cshtml" />
     <Content Include="Views\Admin\UpdateContact.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Admin\AddLaw.cshtml" />
+    <Content Include="Views\Admin\EditLaw.cshtml" />
+    <Content Include="Views\Admin\AdminLawsPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

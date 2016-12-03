@@ -281,12 +281,6 @@ namespace FrozenCritters.Controllers
             }
             return View();
         }
-
-        public ActionResult AdminNewsPage()
-        {
-            return View();
-        }
-
         [HttpPost]
         public ActionResult AddPhoto(Photos photo)
         {
@@ -396,9 +390,57 @@ namespace FrozenCritters.Controllers
         [HttpPost]
         public ActionResult UpdateContact(Contact contact)
         {
-            if (ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 if (FrozenCritters.Models.FrozenCrittersDb.UpdateContact(contact))
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
+            return View();
+        }
+
+        public ActionResult AdminNewsPage()
+        {
+            return View();
+        }
+
+        public ActionResult AdminLawsPage()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult AddLaw()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddLaw(Laws law)
+        {
+            if (ModelState.IsValid)
+            {
+                if (FrozenCritters.Models.FrozenCrittersDb.AddLaw(law))
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult EditLaw()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult EditLaw(Laws law, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                if (FrozenCritters.Models.FrozenCrittersDb.EditLaw(law, id))
                 {
                     return RedirectToAction("Index", "Admin");
                 }
