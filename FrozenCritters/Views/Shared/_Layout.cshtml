@@ -1,5 +1,5 @@
 ﻿@{
-    var cats = FrozenCritters.Models.FrozenCrittersDb.GetCategories();
+    var cats = FrozenCritters.Models.FrozenCrittersDb.GetInStockCategories();
 }
 
 
@@ -16,26 +16,7 @@
 </head>
 
 <body>
-    <div>
-        @using Microsoft.AspNet.Identity
-        @if (Request.IsAuthenticated)
-                {
-                    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, htmlAttributes: new { id = "logoutForm", @class="LogIn2"}))
-            {
-                @Html.AntiForgeryToken()
 
-                <span>@Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" }) | <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></span>
-            }
-        }
-        else
-        {
-            <span id="LogIn">@Html.ActionLink("Log in", "Login", "Account") | @Html.ActionLink("Register", "Register", "Account")</span>
-        }
-        <span id="cart">@Html.ActionLink("Shoping Cart", "ShoppingCart", "Products")</span>
-        <br />
-        <br />
-        <br />
-    </div>
     <div id="bodyWrapper">
         <div id="header">
             <div id="header1">Frozen&nbsp;Critters</div>
@@ -56,7 +37,9 @@
             <li>@Html.ActionLink("About", "About", "Home")</li>
             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
             <li>@Html.ActionLink("Laws", "Laws", "Home")</li>
-            @if (Request.IsAuthenticated && User.IsInRole("Admin")) {<li>@Html.ActionLink("Admin", "Index", "Admin")</li> }
+            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            {
+            <li>@Html.ActionLink("Admin", "Index", "Admin")</li> }
         </ul>
 
         <div class="container body-content">

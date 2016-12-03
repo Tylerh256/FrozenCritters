@@ -367,5 +367,43 @@ namespace FrozenCritters.Controllers
         {
             return View();
         }
+
+        [HttpGet]
+        public ActionResult UpdateAbout()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UpdateAbout(About about)
+        {
+            if (ModelState.IsValid)
+            {
+                if (FrozenCritters.Models.FrozenCrittersDb.updateAbout(about))
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult UpdateContact()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult UpdateContact(Contact contact)
+        {
+            if (ModelState.IsValid) 
+            {
+                if (FrozenCritters.Models.FrozenCrittersDb.UpdateContact(contact))
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
+            return View();
+        }
     }
 }

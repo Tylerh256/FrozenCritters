@@ -262,9 +262,11 @@
       <DependentUpon>201611200721304_Admin Role Added.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\About.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Categories.cs" />
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\FrozenCrittersDb.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -325,7 +327,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -369,6 +370,9 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Products\PostAddToCartPage.cshtml" />
     <Content Include="Views\Products\ShoppingCart.cshtml" />
+    <Content Include="Views\Admin\UpdateAbout.cshtml" />
+    <Content Include="Views\Admin\UpdateContact.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

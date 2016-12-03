@@ -164,7 +164,7 @@ img{
 	width:190px;
 }
 
-#newsHeadline{
+.newsHeadLine{
     text-align:center;
     font-size:42px;
     font-family:'Bell MT';
@@ -198,6 +198,7 @@ img{
 #indiProductContainer{
     flex-flow:wrap;
     justify-content:space-between;
+    min-width:1000px;
 }
 
 #photos{

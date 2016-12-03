@@ -1,6 +1,8 @@
 ﻿
 @{
     ViewBag.Title = "Home";
+    var news = FrozenCritters.Models.FrozenCrittersDb.GetRelevantNews();
+    var saleProds = FrozenCritters.Models.FrozenCrittersDb.GetFeaturedSaleProducts();
 }
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
@@ -37,40 +39,26 @@
 </div>
 <p id="featuredSaleItems">Featured Sale Items</p>
 <ul class="products">
-    <li>
-        <a href="#">
-            <img src="~/Content/img/skull4.jpg" alt="skull4" />
-            <h4 class="productName">Gorilla Skull</h4>
-            <p class="productPrice">$199.99</p>
-            <p class="productDescription">Gorilla skull in excellent condition. No noticable damage</p>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-            <img src="~/Content/img/skull3.jpg" alt="skull3" />
-            <h4 class="productName">Human Skull</h4>
-            <p class="productPrice">$199.99</p>
-            <p class="productDescription">Human skull in excellent condition. No noticable damage</p>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-            <img src="~/Content/img/skull2.jpg" alt="skull2" />
-            <h4 class="productName">Crocodile Skull</h4>
-            <p class="productPrice">$199.99</p>
-            <p class="productDescription">Crocodile skull in excellent condition. No noticable damage</p>
-        </a>
-    </li>
-    <li>
-        <a href="#">
-            <img src="~/Content/img/muntjacdeer1.jpg" alt="skull1" />
-            <h4 class="productName">Muntjac Deer Skull</h4>
-            <p class="productPrice">$199.99</p>
-            <p class="productDescription">Muntjac Deer skull in excellent condition. No noticable damage</p>
-        </a>
-    </li>
+    @foreach (var prod in saleProds)
+    {
+        <li>
+            <a class="productHover" href="@Url.Action("IndividualProductsPage", "Products", new { id = prod.ProductsId }, null)">
+                <img src="~/content/img/@prod.ProductsPhoto" alt="@prod.ProductsName" />
+                <h4 class="productName">@prod.ProductsName</h4>
+                @if (prod.ProductsSalePrice > 0)
+                {<div class="prices"><span class="fullPrice">$@prod.ProductsPrice</span><span>     </span><span class="salePrice">$@prod.ProductsSalePrice</span></div> }
+                else
+                { <div class="prices"><p class="productPrice">$@prod.ProductsPrice</p></div>}
+            </a>
+        </li>
+    }
 </ul>
-<div id="news">
-    <p id="newsHeadline">Puyallup Sportsman Show <span id="newsDate">@DateTime.Now.Month @DateTime.Now.Day @DateTime.Now.Year </span></p>
-    <p>Hello everyone, Frozen Critters will be at the Puyallup Sportsman show this weekend at the Puyallup Fair Grounds. Come stop by and see what we have to offer in person!</p>
-</div>
+
+
+@foreach (var n in news)
+{
+    <div class="news">
+        <p class="newsHeadLine"><span class="newsDate">@n.NewsPostDate.Date.Month @n.NewsPostDate.Day @n.NewsPostDate.Year</span> - @n.NewsTitle</p>
+        <p>@n.NewsDescription</p>
+    </div>
+}
