@@ -3,8 +3,12 @@
     ViewBag.Title = "Edit Product";
     var cats = FrozenCritters.Models.FrozenCrittersDb.GetCategories();
     var categoryName = FrozenCritters.Models.FrozenCrittersDb.GetCategory(Model.CategoriesId);
+    var message = ViewBag.Error;
 }
 <h2>Edit Product</h2>
+
+<p style="color:red;">@message</p>
+
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()

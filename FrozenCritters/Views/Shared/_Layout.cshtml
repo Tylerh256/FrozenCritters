@@ -35,7 +35,7 @@
             <li class="linavbar">@Html.ActionLink("Gallery", "Gallery", "Gallery")</li>
             <li class="linavbar">@Html.ActionLink("About", "About", "Home")</li>
             <li class="linavbar">@Html.ActionLink("Contact", "Contact", "Home")</li>
-            <li class="linavbar">@Html.ActionLink("Laws", "Laws", "Home")</li>
+            <li class="linavbar">@Html.ActionLink("Laws", "Index", "Laws")</li>
             @if (Request.IsAuthenticated && User.IsInRole("Admin"))
             {
             <li class="linavbar">@Html.ActionLink("Admin", "Index", "Admin")</li> }

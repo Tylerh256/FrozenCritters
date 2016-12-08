@@ -423,7 +423,7 @@ namespace FrozenCritters.Models
             SqlConnection con = new SqlConnection(conString);
             SqlCommand getProds = new SqlCommand();
             getProds.Connection = con;
-            getProds.CommandText = "SELECT * FROM Products WHERE ProductsFeatureSale > 0";
+            getProds.CommandText = "SELECT * FROM Products WHERE ProductsFeatureSale > 0  AND ProductsQuantity > 0";
             con.Open();
             SqlDataReader reader = getProds.ExecuteReader();
             List<Products> prods = new List<Products>();

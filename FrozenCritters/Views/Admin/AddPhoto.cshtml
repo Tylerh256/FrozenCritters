@@ -2,9 +2,12 @@
 
 @{
     ViewBag.Title = "AddPhoto";
+    var message = ViewBag.Error;
 }
 
 <h2>AddPhoto</h2>
+
+<p style="color:red;">@message</p>
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -36,7 +39,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
+            <div class="col-md-offset-2 col-md-8">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>

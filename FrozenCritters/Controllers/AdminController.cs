@@ -38,8 +38,6 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto = null;
-                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
-                    return View();
                 }
 
                 hpf = Request.Files[1];
@@ -53,8 +51,6 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto2 = null;
-                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
-                    return View();
                 }
 
                 hpf = Request.Files[2];
@@ -68,8 +64,6 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto3 = null;
-                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
-                    return View();
                 }
 
                 hpf = Request.Files[3];
@@ -83,8 +77,6 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto4 = null;
-                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
-                    return View();
                 }
 
                 hpf = Request.Files[4];
@@ -98,8 +90,6 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto5 = null;
-                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
-                    return View();
                 }
 
             }
@@ -316,6 +306,8 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     photo.PhotosFile = null;
+                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                    return View();
                 }
             }
 
@@ -347,14 +339,16 @@ namespace FrozenCritters.Controllers
         [HttpPost]
         public ActionResult PhotoForm(Photos photo, int id)
         {
+            var allowedExtensions = new[] { ".png", ".jpg" };
+
             if (ModelState.IsValid)
             {
                 Photos pho = FrozenCrittersDb.GetPhoto(id);
                 if (Request.Files.Count > 0 || Request.Files.Count != 0)
                 {
                     HttpPostedFileBase hpf = Request.Files[0];
-
-                    if (Request.Files[0].ContentLength > 0)
+                    var extension = Path.GetExtension(hpf.FileName);
+                    if (Request.Files[0].ContentLength > 0 && (allowedExtensions.Contains(extension)))
                     {
                         photo.PhotosFile = Guid.NewGuid() + Path.GetFileName(hpf.FileName);
                         hpf.SaveAs(Path.Combine(Server.MapPath("//Content/img"), photo.PhotosFile));
@@ -362,6 +356,8 @@ namespace FrozenCritters.Controllers
                     else
                     {
                         photo.PhotosFile = pho.PhotosFile;
+                        ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                        return View();
                     }
                 }
             }

@@ -4,11 +4,16 @@
     padding:0;
 }
 
+a{
+    color:grey;
+}
+
 #LogIn{
     float:left;
     font-size:20px;
     padding:15px;
     font-family:Arial;
+
 }
 
 .LogIn2{
@@ -113,6 +118,10 @@
 
 .ulnavbar .linavbar ul.dropdown .linavbar{
     display: block;
+}
+
+ul{
+    padding:0;
 }
 
 /*ul{
@@ -385,3 +394,6 @@ ul.galleryPhotos li{
     justify-content:space-around;
 }
 
+textarea{
+    float:left;
+}

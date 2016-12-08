@@ -252,6 +252,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GalleryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LawsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -378,6 +379,7 @@
     <Content Include="Views\Admin\EditLaw.cshtml" />
     <Content Include="Views\Admin\AdminLawsPage.cshtml" />
     <Content Include="Views\Gallery\Gallery.cshtml" />
+    <Content Include="Views\Laws\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

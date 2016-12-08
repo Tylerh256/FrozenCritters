@@ -2,9 +2,11 @@
 @model FrozenCritters.Models.Photos
 @{
     ViewBag.Title = "Edit Photo";
-
+    var message = ViewBag.Error;
 }
 <h2>Edit Photo</h2>
+
+<p style="color:red;">@message</p>
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
