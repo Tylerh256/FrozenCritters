@@ -18,13 +18,6 @@
     font-family:Arial;
 }
 
-#cart{
-    float:right;
-    font-size:20px;
-    padding:15px;
-    font-family:Arial;
-}
-
 #header{
     padding:0;
     margin:0;
@@ -70,7 +63,59 @@
     text-align:center;
 }
 
-ul{
+#cart{
+    float:right;
+    z-index:-1;
+}
+
+.ulnavbar{
+    padding: 0;
+    list-style: none;
+    font-family:'Bell MT';
+    background-color:white;
+    font-size:20px;
+}
+
+.linavbar{
+    background-color:white;
+}
+
+.ulnavbar .linavbar{
+    display: inline-block;
+    position: relative;
+    line-height: 21px;
+    text-align: left;
+}
+
+.ulnavbar .linavbar a{
+    display: block;
+    padding: 8px 25px;
+    color: #333;
+    text-decoration: none;
+}
+
+.ulnavbar .linavbar a:hover{
+    color:white;
+    background-color:black;
+}
+
+.ulnavbar .linavbar ul.dropdown{
+    min-width: 100%; /* Set width of the dropdown */
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+}
+
+.ulnavbar .linavbar:hover ul.dropdown{
+    display: block;	/* Display the dropdown */
+}
+
+.ulnavbar .linavbar ul.dropdown .linavbar{
+    display: block;
+}
+
+/*ul{
     padding: 0;
     list-style: none;
     font-family:'Bell MT';
@@ -98,7 +143,7 @@ ul li a:hover{
 }
 
 ul li ul.dropdown{
-    min-width: 100%; /* Set width of the dropdown */
+    min-width: 100%; Set width of the dropdown 
     display: none;
     position: absolute;
     z-index: 999;
@@ -106,12 +151,12 @@ ul li ul.dropdown{
 }
 
 ul li:hover ul.dropdown{
-    display: block;	/* Display the dropdown */
+    display: block;	 Display the dropdown 
 }
 
 ul li ul.dropdown li{
     display: block;
-}
+}*/
 
 #featuredSaleItems{
     text-align:center;
@@ -127,6 +172,34 @@ ul.products{
     display:flex;
     flex-flow:wrap;
     justify-content:space-around;
+}
+
+ul.products li{
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px;
+    display:flex;
+    flex-flow:wrap;
+    justify-content:space-around;
+}
+
+
+#featuredSaleItems{
+    text-align:center;
+    font-size:42px;
+    font-family:'Bell MT';
+    text-decoration:underline;
+}
+
+ul.products{
+	margin: 0 auto;	
+	padding: 0;
+	text-align: center;
+    display:flex;
+    flex-flow:wrap;
+    justify-content:space-around;
+    list-style-type:none;
 }
 
 ul.products li{
@@ -164,7 +237,7 @@ img{
 	width:190px;
 }
 
-#newsHeadline{
+.newsHeadLine{
     text-align:center;
     font-size:42px;
     font-family:'Bell MT';
@@ -198,23 +271,22 @@ img{
 #indiProductContainer{
     flex-flow:wrap;
     justify-content:space-between;
-    padding:0;
-    min-width:900px;
+    min-width:1000px;
 }
 
 #photos{
-    width:450px;
+    width:500px;
     float:left;
 }
 
 #mainPhoto{
     padding-bottom:10px;
-    width:100%;
+    width:500px;
 }
 
 .altPhotoContainer{
     flex-flow:wrap;
-    justify-content:space-between;
+    justify-content:space-around;
 }
 
 .altPhotos{
@@ -223,11 +295,11 @@ img{
 
 #productDetails{
     float:right;
-    width:450px;
+    width:500px;
 }
 
 #indiProductName{
-    font-size:50px;
+    font-size:60px;
 }
 
 #indiProductFullPriceSale{
@@ -292,3 +364,24 @@ img{
 #userALocalAccount{
     font-weight:bold;
 }
+
+ul.galleryPhotos{
+	margin: 0 auto;	
+	padding: 0;
+	text-align: center;
+    display:flex;
+    flex-flow:wrap;
+    justify-content:space-around;
+    list-style-type:none;
+}
+
+ul.galleryPhotos li{
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+	margin: 20px;
+    display:flex;
+    flex-flow:wrap;
+    justify-content:space-around;
+}
+

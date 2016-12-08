@@ -1,20 +1,18 @@
-﻿@model FrozenCritters.ViewModels.AddPhotosViewModel
+﻿@model FrozenCritters.Models.Photos
+
 @{
-    ViewBag.Title = "Add Photo";
+    ViewBag.Title = "AddPhoto";
 }
-<h2>Add Photo</h2>
+
+<h2>AddPhoto</h2>
 
 @using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-
+    
     <div class="form-horizontal">
+        <h4>Photos</h4>
         <hr />
-        <div class="form-group">
-            <div class="col-md-10">
-                <input type="file" name="PhotosFile" />
-            </div>
-        </div>
         <div class="form-group">
             @Html.LabelFor(model => model.PhotosName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -22,6 +20,7 @@
                 @Html.ValidationMessageFor(model => model.PhotosName, "", new { @class = "text-danger" })
             </div>
         </div>
+
         <div class="form-group">
             @Html.LabelFor(model => model.PhotosDescription, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -29,6 +28,13 @@
                 @Html.ValidationMessageFor(model => model.PhotosDescription, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="file" name="PhotosFile" />
+            </div>
+        </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -36,9 +42,7 @@
         </div>
     </div>
 }
+
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

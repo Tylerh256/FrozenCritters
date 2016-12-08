@@ -14,28 +14,28 @@
         <div class="form-group">
             @Html.LabelFor(model => model.NewsTitle, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NewsTitle, new { htmlAttributes = new { @class = "form-control", value = Model.NewsTitle } })
+                @Html.EditorFor(model => model.NewsTitle, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NewsTitle, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.NewsDescription, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NewsDescription, new { htmlAttributes = new { @class = "form-control", value = Model.NewsDescription } })
+                @Html.EditorFor(model => model.NewsDescription, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NewsDescription, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.NewsPostDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NewsPostDate, new { htmlAttributes = new { @class = "form-control", value = Model.NewsPostDate } })
+                @Html.EditorFor(model => model.NewsPostDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NewsPostDate, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.NewsExpirationDate, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NewsExpirationDate, new { htmlAttributes = new { @class = "form-control", Model.NewsExpirationDate } })
+                @Html.EditorFor(model => model.NewsExpirationDate, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.NewsExpirationDate, "", new { @class = "text-danger" })
             </div>
         </div>

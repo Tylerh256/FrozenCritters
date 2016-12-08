@@ -180,6 +180,30 @@ namespace FrozenCritters.Models
             return news;
         }
 
+        public static List<News> GetRelevantNews()
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand getNews = new SqlCommand();
+            getNews.Connection = con;
+            getNews.CommandText = "SELECT * FROM News WHERE NewsExpirationDate >= getDate() ORDER BY NewsPostDate DESC";
+            con.Open();
+            SqlDataReader reader = getNews.ExecuteReader();
+            List<News> newsList = new List<News>();
+            while (reader.Read())
+            {
+                News news = new News();
+                news.NewsId = (int)reader["NewsId"];
+                news.NewsTitle = reader["NewsTitle"].ToString();
+                news.NewsDescription = reader["NewsDescription"].ToString();
+                news.NewsPostDate = (DateTime)reader["NewsPostDate"];
+                news.NewsExpirationDate = (DateTime)reader["NewsExpirationDate"];
+                newsList.Add(news);
+            }
+            con.Close();
+            return newsList;
+        }
+
         public static bool EditNews(News news, int id)
         {
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
@@ -287,6 +311,27 @@ namespace FrozenCritters.Models
             return cats;
         }
 
+        public static List<Categories> GetInStockCategories()
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand getCats = new SqlCommand();
+            getCats.Connection = con;
+            getCats.CommandText = "SELECT DISTINCT Categories.CategoriesId, Categories.CategoriesName FROM Categories INNER JOIN Products ON Categories.CategoriesId = Products.CategoriesId WHERE ProductsQuantity > 0";
+            con.Open();
+            SqlDataReader reader = getCats.ExecuteReader();
+            var cats = new List<Categories>();
+            while (reader.Read())
+            {
+                Categories cat = new Categories();
+                cat.CategoriesId = (int)reader["CategoriesId"];
+                cat.CategoriesName = reader["CategoriesName"].ToString();
+                cats.Add(cat);
+            }
+            con.Close();
+            return cats;
+        }
+
         public static Categories GetCategory(int id)
         {
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
@@ -324,6 +369,8 @@ namespace FrozenCritters.Models
                 prod.ProductsDescription = reader["ProductsDescription"].ToString();
                 prod.ProductsPrice = (double)reader["ProductsPrice"];
                 prod.ProductsSalePrice = reader["ProductsSalePrice"] as double?;
+                prod.ProductsShippingCharge = reader["ProductsShippingCharge"] as double?;
+                prod.ProductsHandlingCharge = reader["ProductsHandlingCharge"] as double?;
                 prod.ProductsQuantity = (int)reader["ProductsQuantity"];
                 prod.ProductsFeature = (bool)reader["ProductsFeature"];
                 prod.ProductsFeatureSale = (bool)reader["ProductsFeatureSale"];
@@ -343,7 +390,7 @@ namespace FrozenCritters.Models
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
             SqlConnection con = new SqlConnection(conString);
             SqlCommand getProds = new SqlCommand();
-            getProds.CommandText = "SELECT ProductsId, ProductsName, ProductsDescription, ProductsPrice, ProductsSalePrice, ProductsQuantity, ProductsPhoto, ProductsPhoto2, ProductsPhoto3, ProductsPhoto3, ProductsPhoto4, ProductsPhoto5, CategoriesId FROM Products WHERE CategoriesId = " + id;
+            getProds.CommandText = "SELECT ProductsId, ProductsName, ProductsDescription, ProductsPrice, ProductsSalePrice, ProductsShippingCharge, ProductsHandlingCharge, ProductsQuantity, ProductsPhoto, ProductsPhoto2, ProductsPhoto3, ProductsPhoto3, ProductsPhoto4, ProductsPhoto5, CategoriesId FROM Products WHERE CategoriesId = " + id + " AND ProductsQuantity > 0";
             getProds.Connection = con;
             con.Open();
             SqlDataReader reader = getProds.ExecuteReader();
@@ -356,6 +403,40 @@ namespace FrozenCritters.Models
                 prod.ProductsDescription = reader["ProductsDescription"].ToString();
                 prod.ProductsPrice = (double)reader["ProductsPrice"];
                 prod.ProductsSalePrice = reader["ProductsSalePrice"] as double?;
+                prod.ProductsShippingCharge = reader["ProductsShippingCharge"] as double?;
+                prod.ProductsHandlingCharge = reader["ProductsHandlingCharge"] as double?;
+                prod.ProductsQuantity = (int)reader["ProductsQuantity"];
+                prod.ProductsPhoto = reader["ProductsPhoto"].ToString();
+                prod.ProductsPhoto2 = reader["ProductsPhoto2"].ToString();
+                prod.ProductsPhoto3 = reader["ProductsPhoto3"].ToString();
+                prod.ProductsPhoto4 = reader["ProductsPhoto4"].ToString();
+                prod.ProductsPhoto5 = reader["ProductsPhoto5"].ToString();
+                prod.CategoriesId = (int)reader["CategoriesId"];
+                prods.Add(prod);
+            }
+            return prods;
+        }
+
+        public static List<Products> GetFeaturedSaleProducts()
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand getProds = new SqlCommand();
+            getProds.Connection = con;
+            getProds.CommandText = "SELECT * FROM Products WHERE ProductsFeatureSale > 0";
+            con.Open();
+            SqlDataReader reader = getProds.ExecuteReader();
+            List<Products> prods = new List<Products>();
+            while (reader.Read())
+            {
+                Products prod = new Products();
+                prod.ProductsId = (int)reader["ProductsId"];
+                prod.ProductsName = reader["ProductsName"].ToString();
+                prod.ProductsDescription = reader["ProductsDescription"].ToString();
+                prod.ProductsPrice = (double)reader["ProductsPrice"];
+                prod.ProductsSalePrice = reader["ProductsSalePrice"] as double?;
+                prod.ProductsShippingCharge = reader["ProductsShippingCharge"] as double?;
+                prod.ProductsHandlingCharge = reader["ProductsHandlingCharge"] as double?;
                 prod.ProductsQuantity = (int)reader["ProductsQuantity"];
                 prod.ProductsPhoto = reader["ProductsPhoto"].ToString();
                 prod.ProductsPhoto2 = reader["ProductsPhoto2"].ToString();
@@ -385,6 +466,8 @@ namespace FrozenCritters.Models
                 prod.ProductsDescription = reader["ProductsDescription"].ToString();
                 prod.ProductsPrice = (double)reader["ProductsPrice"];
                 prod.ProductsSalePrice = reader["ProductsSalePrice"] as double?;
+                prod.ProductsShippingCharge = reader["ProductsShippingCharge"] as double?;
+                prod.ProductsHandlingCharge = reader["ProductsHandlingCharge"] as double?;
                 prod.ProductsQuantity = (int)reader["ProductsQuantity"];
                 prod.ProductsFeature = (bool)reader["ProductsFeature"];
                 prod.ProductsFeatureSale = (bool)reader["ProductsFeatureSale"];
@@ -423,7 +506,7 @@ namespace FrozenCritters.Models
             SqlConnection con = new SqlConnection(conString);
             SqlCommand editProd = new SqlCommand();
             editProd.Connection = con;
-            editProd.CommandText = "UPDATE Products SET ProductsName = @ProductsName, ProductsDescription = @ProductsDescription, ProductsPrice = @ProductsPrice, ProductsSalePrice = @ProductsSalePrice, ProductsQuantity = @ProductsQuantity, ProductsFeature = @ProductsFeature, ProductsFeatureSale = @ProductsFeatureSale, CategoriesId = @CategoriesID, ProductsPhoto = @ProductsPhoto, ProductsPhoto2 = @ProductsPhoto2, ProductsPhoto3 = @ProductsPhoto3, ProductsPhoto4 = @ProductsPhoto4, ProductsPhoto5 = @ProductsPhoto5 WHERE ProductsId = " + id;
+            editProd.CommandText = "UPDATE Products SET ProductsName = @ProductsName, ProductsDescription = @ProductsDescription, ProductsPrice = @ProductsPrice, ProductsSalePrice = @ProductsSalePrice, ProductsShippingCharge = @ProductsShippingCharge, ProductsHandlingCharge = @ProductsHandlingCharge, ProductsQuantity = @ProductsQuantity, ProductsFeature = @ProductsFeature, ProductsFeatureSale = @ProductsFeatureSale, CategoriesId = @CategoriesID, ProductsPhoto = @ProductsPhoto, ProductsPhoto2 = @ProductsPhoto2, ProductsPhoto3 = @ProductsPhoto3, ProductsPhoto4 = @ProductsPhoto4, ProductsPhoto5 = @ProductsPhoto5 WHERE ProductsId = " + id;
             editProd.Parameters.AddWithValue("@ProductsName", product.ProductsName);
             editProd.Parameters.AddWithValue("@ProductsDescription", product.ProductsDescription);
             editProd.Parameters.AddWithValue("@ProductsPrice", product.ProductsPrice);
@@ -434,8 +517,26 @@ namespace FrozenCritters.Models
             else
             {
                 editProd.Parameters.AddWithValue("@ProductsSalePrice", product.ProductsSalePrice);
-
             }
+
+            if(product.ProductsShippingCharge == null)
+            {
+                editProd.Parameters.AddWithValue("@ProductsShippingCharge", DBNull.Value);
+            }
+            else
+            {
+                editProd.Parameters.AddWithValue("@ProductsShippingCharge", product.ProductsShippingCharge);
+            }
+
+            if(product.ProductsHandlingCharge == null)
+            {
+                editProd.Parameters.AddWithValue("@ProductsHandlingCharge", DBNull.Value);
+            }
+            else
+            {
+                editProd.Parameters.AddWithValue("@ProductsHandlingCharge", product.ProductsHandlingCharge);
+            }
+
             editProd.Parameters.AddWithValue("@ProductsQuantity", product.ProductsQuantity);
             editProd.Parameters.AddWithValue("@ProductsFeature", product.ProductsFeature);
             editProd.Parameters.AddWithValue("@ProductsFeatureSale", product.ProductsFeatureSale);
@@ -570,7 +671,7 @@ namespace FrozenCritters.Models
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
             SqlConnection con = new SqlConnection(conString);
             SqlCommand getPhoto = new SqlCommand();
-            getPhoto.CommandText = "SELECT Photosid, PhotosFile, PhotosName, PhotosDescription FROM Photos WHERE PhotosId = " + id;
+            getPhoto.CommandText = "SELECT PhotosId, PhotosFile, PhotosName, PhotosDescription FROM Photos WHERE PhotosId = " + id;
             getPhoto.Connection = con;
             con.Open();
             SqlDataReader reader = getPhoto.ExecuteReader();
@@ -605,6 +706,198 @@ namespace FrozenCritters.Models
                 photos.Add(photo);
             }
             return photos;
+        }
+
+        public static bool updateAbout(About about)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand updateAboutText = new SqlCommand();
+            updateAboutText.Connection = con;
+            updateAboutText.CommandText = "UPDATE About SET AboutDescription = @AboutDescription WHERE AboutId = 1";
+            updateAboutText.Parameters.AddWithValue("@AboutDescription", about.AboutDescription);
+
+            try
+            {
+                con.Open();
+                int rows = updateAboutText.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                con.Dispose();
+            }
+        }
+
+        public static About getAbout()
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand getAboutText = new SqlCommand();
+            getAboutText.Connection = con;
+            con.Open();
+            getAboutText.CommandText = "SELECT * FROM About";
+            SqlDataReader reader = getAboutText.ExecuteReader();
+            About about = new About();
+            while (reader.Read())
+            {
+                about.AboutDescription = reader["AboutDescription"].ToString();
+            }
+            return about;
+        }
+
+        public static bool UpdateContact(Contact contact)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand updateCon = new SqlCommand();
+            updateCon.Connection = con;
+            updateCon.CommandText = "UPDATE Contact SET ContactEmail = @ContactEmail, ContactPhoneNumber = @ContactPhoneNumber, ContactHours = @ContactHours WHERE ContactId = 1;";
+            updateCon.Parameters.AddWithValue("@ContactEmail", contact.ContactEmail);
+            updateCon.Parameters.AddWithValue("@ContactPhoneNumber", contact.ContactPhoneNumber);
+            updateCon.Parameters.AddWithValue("@ContactHours", contact.ContactHours);
+
+            try
+            {
+                con.Open();
+                int rows = updateCon.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                con.Dispose();
+            }
+        }
+
+        public static Contact GetContact()
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand getCon = new SqlCommand();
+            getCon.Connection = con;
+            getCon.CommandText = "SELECT * FROM Contact";
+            con.Open();
+            SqlDataReader reader = getCon.ExecuteReader();
+            Contact contact = new Contact();
+            while (reader.Read())
+            {
+                contact.ContactEmail = reader["ContactEmail"].ToString();
+                contact.ContactPhoneNumber = reader["ContactPhoneNumber"].ToString();
+                contact.ContactHours = reader["ContactHours"].ToString();
+            }
+            return contact;
+        }
+
+        public static bool AddLaw(Laws law)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand addnews = new SqlCommand();
+            addnews.Connection = con;
+            addnews.CommandText = "INSERT INTO Laws (LawsTitle, LawsLink) VALUES(@LawsTitle, @LawsLink)";
+            con.Open();
+            addnews.Parameters.AddWithValue("@LawsTitle", law.LawsTitle);
+            addnews.Parameters.AddWithValue("@LawsLink", law.LawsLink);
+
+            try
+            {
+                con.Open();
+                int rows = addnews.ExecuteNonQuery();
+                if (rows == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                con.Dispose();
+            }
+        }
+
+        public static bool EditLaw(Laws law, int id)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand addnews = new SqlCommand();
+            addnews.Connection = con;
+            addnews.CommandText = "UPDATE Laws SET LawsTitle = @LawsTitle, LawsLink = @LawsLink WHERE LawsId = " + id;
+            con.Open();
+            addnews.Parameters.AddWithValue("@LawsTitle", law.LawsTitle);
+            addnews.Parameters.AddWithValue("@LawsLink", law.LawsLink);
+
+            try
+            {
+                con.Open();
+                int rows = addnews.ExecuteNonQuery();
+                if (rows == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                con.Dispose();
+            }
+        }
+
+        public static List<Laws> GetLaws()
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCritters"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand getNews = new SqlCommand();
+            getNews.Connection = con;
+            getNews.CommandText = "SELECT * FROM Laws";
+            con.Open();
+            SqlDataReader reader = getNews.ExecuteReader();
+            List<Laws> laws = new List<Laws>();
+            while (reader.Read())
+            {
+                Laws law = new Laws();
+                law.LawsId = (int)reader["LawsId"];
+                law.LawsTitle = reader["LawsTitle"].ToString();
+                law.LawsLink = reader["LawsLink"].ToString();
+                laws.Add(law);
+            }
+            return laws;
+        }
+
+        public static Laws GetLaw(int id)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand getlaw = new SqlCommand();
+            getlaw.Connection = con;
+            getlaw.CommandText = "SELECT LawsId, LawsTitle, LawsLink FROMM laws WHERE LawsId = " + id;
+            con.Open();
+            SqlDataReader reader = getlaw.ExecuteReader();
+            Laws law = new Laws();
+            law.LawsId = (int)reader["LawsId"];
+            law.LawsTitle = reader["LawsTitle"].ToString();
+            law.LawsLink = reader["LawsLink"].ToString();
+
+            return law;
         }
     }
 }

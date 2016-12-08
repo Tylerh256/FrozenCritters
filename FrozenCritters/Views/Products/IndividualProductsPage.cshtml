@@ -57,9 +57,9 @@
             {
                 <input type="hidden" name="amount" value="@Model.ProductsPrice">
             }
-            <input type="hidden" name="shipping" value="0">
+            <input type="hidden" name="shipping" value="@Model.ProductsShippingCharge">
             <input type="hidden" name="shipping2" value="0">
-            <input type="hidden" name="handling" value="0">
+            <input type="hidden" name="handling" value="@Model.ProductsHandlingCharge">
             <input type="hidden" name="currency_code" value="USD">
             <input type="hidden" name="return" value="">
             <input type="hidden" name="undefined_quantity" value="1">

@@ -30,8 +30,6 @@ namespace FrozenCritters.Controllers
         public ActionResult PostAddToCartPage(int id)
         {
             ViewModel.CheckoutProductViewModel prod = Models.FrozenCrittersDb.getCheckoutProd(id);
-            //string json = JsonConvert.SerializeObject(prod);
-            //Request.Cookies["cart"][prod.ProdcutsName] = json;
             return View(prod);
         }
 
