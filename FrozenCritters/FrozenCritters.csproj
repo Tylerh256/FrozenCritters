@@ -377,11 +377,11 @@
     <Content Include="Views\Admin\AddLaw.cshtml" />
     <Content Include="Views\Admin\EditLaw.cshtml" />
     <Content Include="Views\Admin\AdminLawsPage.cshtml" />
+    <Content Include="Views\Gallery\Gallery.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\img\" />
-    <Folder Include="Views\Gallery\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -16,30 +16,29 @@
 </head>
 
 <body>
-
     <div id="bodyWrapper">
         <div id="header">
             <div id="header1">Frozen&nbsp;Critters</div>
             <p id="header2">Natural&nbsp;History&nbsp;Products</p>
         </div>
-        <ul>
-            <li>@Html.ActionLink("Home", "Index", "Home")</li>
-            <li>
+        <ul class="ulnavbar" id="dropdown">
+            <li class="linavbar">@Html.ActionLink("Home", "Index", "Home")</li>
+            <li class="linavbar">
                 <a href="#">Products</a>
                 <ul class="dropdown">
                     @foreach (var cat in cats)
                     {
-                        <li>@Html.ActionLink(cat.CategoriesName, "Products", "Products", new { id = cat.CategoriesId }, null)</li>
+                        <li class="linavbar">@Html.ActionLink(cat.CategoriesName, "Products", "Products", new { id = cat.CategoriesId }, null)</li>
                     }
                 </ul>
             </li>
-            <li>@Html.ActionLink("Gallery", "Gallery", "Gallery")</li>
-            <li>@Html.ActionLink("About", "About", "Home")</li>
-            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-            <li>@Html.ActionLink("Laws", "Laws", "Home")</li>
+            <li class="linavbar">@Html.ActionLink("Gallery", "Gallery", "Gallery")</li>
+            <li class="linavbar">@Html.ActionLink("About", "About", "Home")</li>
+            <li class="linavbar">@Html.ActionLink("Contact", "Contact", "Home")</li>
+            <li class="linavbar">@Html.ActionLink("Laws", "Laws", "Home")</li>
             @if (Request.IsAuthenticated && User.IsInRole("Admin"))
             {
-            <li>@Html.ActionLink("Admin", "Index", "Admin")</li> }
+            <li class="linavbar">@Html.ActionLink("Admin", "Index", "Admin")</li> }
         </ul>
 
         <div class="container body-content">

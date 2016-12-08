@@ -30,6 +30,14 @@ namespace FrozenCritters.Models
         [Display(Name = "Sale Price: ")]
         public double? ProductsSalePrice { get; set; }
 
+        [DataType(DataType.Currency)]
+        [Display(Name = "Shipping Charge")]
+        public double? ProductsShippingCharge { get; set; }
+
+        [DataType(DataType.Currency)]
+        [Display(Name = "Handling Charge")]
+        public double? ProductsHandlingCharge { get; set; }
+
         [Display(Name = "Feature Sale Item: ")]
         public bool ProductsFeatureSale { get; set; }
 

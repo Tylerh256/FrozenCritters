@@ -369,6 +369,8 @@ namespace FrozenCritters.Models
                 prod.ProductsDescription = reader["ProductsDescription"].ToString();
                 prod.ProductsPrice = (double)reader["ProductsPrice"];
                 prod.ProductsSalePrice = reader["ProductsSalePrice"] as double?;
+                prod.ProductsShippingCharge = reader["ProductsShippingCharge"] as double?;
+                prod.ProductsHandlingCharge = reader["ProductsHandlingCharge"] as double?;
                 prod.ProductsQuantity = (int)reader["ProductsQuantity"];
                 prod.ProductsFeature = (bool)reader["ProductsFeature"];
                 prod.ProductsFeatureSale = (bool)reader["ProductsFeatureSale"];
@@ -388,7 +390,7 @@ namespace FrozenCritters.Models
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
             SqlConnection con = new SqlConnection(conString);
             SqlCommand getProds = new SqlCommand();
-            getProds.CommandText = "SELECT ProductsId, ProductsName, ProductsDescription, ProductsPrice, ProductsSalePrice, ProductsQuantity, ProductsPhoto, ProductsPhoto2, ProductsPhoto3, ProductsPhoto3, ProductsPhoto4, ProductsPhoto5, CategoriesId FROM Products WHERE CategoriesId = " + id + " AND ProductsQuantity > 0";
+            getProds.CommandText = "SELECT ProductsId, ProductsName, ProductsDescription, ProductsPrice, ProductsSalePrice, ProductsShippingCharge, ProductsHandlingCharge, ProductsQuantity, ProductsPhoto, ProductsPhoto2, ProductsPhoto3, ProductsPhoto3, ProductsPhoto4, ProductsPhoto5, CategoriesId FROM Products WHERE CategoriesId = " + id + " AND ProductsQuantity > 0";
             getProds.Connection = con;
             con.Open();
             SqlDataReader reader = getProds.ExecuteReader();
@@ -401,6 +403,8 @@ namespace FrozenCritters.Models
                 prod.ProductsDescription = reader["ProductsDescription"].ToString();
                 prod.ProductsPrice = (double)reader["ProductsPrice"];
                 prod.ProductsSalePrice = reader["ProductsSalePrice"] as double?;
+                prod.ProductsShippingCharge = reader["ProductsShippingCharge"] as double?;
+                prod.ProductsHandlingCharge = reader["ProductsHandlingCharge"] as double?;
                 prod.ProductsQuantity = (int)reader["ProductsQuantity"];
                 prod.ProductsPhoto = reader["ProductsPhoto"].ToString();
                 prod.ProductsPhoto2 = reader["ProductsPhoto2"].ToString();
@@ -431,6 +435,8 @@ namespace FrozenCritters.Models
                 prod.ProductsDescription = reader["ProductsDescription"].ToString();
                 prod.ProductsPrice = (double)reader["ProductsPrice"];
                 prod.ProductsSalePrice = reader["ProductsSalePrice"] as double?;
+                prod.ProductsShippingCharge = reader["ProductsShippingCharge"] as double?;
+                prod.ProductsHandlingCharge = reader["ProductsHandlingCharge"] as double?;
                 prod.ProductsQuantity = (int)reader["ProductsQuantity"];
                 prod.ProductsPhoto = reader["ProductsPhoto"].ToString();
                 prod.ProductsPhoto2 = reader["ProductsPhoto2"].ToString();
@@ -460,6 +466,8 @@ namespace FrozenCritters.Models
                 prod.ProductsDescription = reader["ProductsDescription"].ToString();
                 prod.ProductsPrice = (double)reader["ProductsPrice"];
                 prod.ProductsSalePrice = reader["ProductsSalePrice"] as double?;
+                prod.ProductsShippingCharge = reader["ProductsShippingCharge"] as double?;
+                prod.ProductsHandlingCharge = reader["ProductsHandlingCharge"] as double?;
                 prod.ProductsQuantity = (int)reader["ProductsQuantity"];
                 prod.ProductsFeature = (bool)reader["ProductsFeature"];
                 prod.ProductsFeatureSale = (bool)reader["ProductsFeatureSale"];
@@ -498,7 +506,7 @@ namespace FrozenCritters.Models
             SqlConnection con = new SqlConnection(conString);
             SqlCommand editProd = new SqlCommand();
             editProd.Connection = con;
-            editProd.CommandText = "UPDATE Products SET ProductsName = @ProductsName, ProductsDescription = @ProductsDescription, ProductsPrice = @ProductsPrice, ProductsSalePrice = @ProductsSalePrice, ProductsQuantity = @ProductsQuantity, ProductsFeature = @ProductsFeature, ProductsFeatureSale = @ProductsFeatureSale, CategoriesId = @CategoriesID, ProductsPhoto = @ProductsPhoto, ProductsPhoto2 = @ProductsPhoto2, ProductsPhoto3 = @ProductsPhoto3, ProductsPhoto4 = @ProductsPhoto4, ProductsPhoto5 = @ProductsPhoto5 WHERE ProductsId = " + id;
+            editProd.CommandText = "UPDATE Products SET ProductsName = @ProductsName, ProductsDescription = @ProductsDescription, ProductsPrice = @ProductsPrice, ProductsSalePrice = @ProductsSalePrice, ProductsShippingCharge = @ProductsShippingCharge, ProductsHandlingCharge = @ProductsHandlingCharge, ProductsQuantity = @ProductsQuantity, ProductsFeature = @ProductsFeature, ProductsFeatureSale = @ProductsFeatureSale, CategoriesId = @CategoriesID, ProductsPhoto = @ProductsPhoto, ProductsPhoto2 = @ProductsPhoto2, ProductsPhoto3 = @ProductsPhoto3, ProductsPhoto4 = @ProductsPhoto4, ProductsPhoto5 = @ProductsPhoto5 WHERE ProductsId = " + id;
             editProd.Parameters.AddWithValue("@ProductsName", product.ProductsName);
             editProd.Parameters.AddWithValue("@ProductsDescription", product.ProductsDescription);
             editProd.Parameters.AddWithValue("@ProductsPrice", product.ProductsPrice);
@@ -509,8 +517,26 @@ namespace FrozenCritters.Models
             else
             {
                 editProd.Parameters.AddWithValue("@ProductsSalePrice", product.ProductsSalePrice);
-
             }
+
+            if(product.ProductsShippingCharge == null)
+            {
+                editProd.Parameters.AddWithValue("@ProductsShippingCharge", DBNull.Value);
+            }
+            else
+            {
+                editProd.Parameters.AddWithValue("@ProductsShippingCharge", product.ProductsShippingCharge);
+            }
+
+            if(product.ProductsHandlingCharge == null)
+            {
+                editProd.Parameters.AddWithValue("@ProductsHandlingCharge", DBNull.Value);
+            }
+            else
+            {
+                editProd.Parameters.AddWithValue("@ProductsHandlingCharge", product.ProductsHandlingCharge);
+            }
+
             editProd.Parameters.AddWithValue("@ProductsQuantity", product.ProductsQuantity);
             editProd.Parameters.AddWithValue("@ProductsFeature", product.ProductsFeature);
             editProd.Parameters.AddWithValue("@ProductsFeatureSale", product.ProductsFeatureSale);
@@ -645,7 +671,7 @@ namespace FrozenCritters.Models
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
             SqlConnection con = new SqlConnection(conString);
             SqlCommand getPhoto = new SqlCommand();
-            getPhoto.CommandText = "SELECT Photosid, PhotosFile, PhotosName, PhotosDescription FROM Photos WHERE PhotosId = " + id;
+            getPhoto.CommandText = "SELECT PhotosId, PhotosFile, PhotosName, PhotosDescription FROM Photos WHERE PhotosId = " + id;
             getPhoto.Connection = con;
             con.Open();
             SqlDataReader reader = getPhoto.ExecuteReader();

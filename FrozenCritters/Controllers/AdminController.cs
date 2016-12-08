@@ -38,6 +38,8 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto = null;
+                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                    return View();
                 }
 
                 hpf = Request.Files[1];
@@ -51,6 +53,8 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto2 = null;
+                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                    return View();
                 }
 
                 hpf = Request.Files[2];
@@ -64,6 +68,8 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto3 = null;
+                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                    return View();
                 }
 
                 hpf = Request.Files[3];
@@ -77,6 +83,8 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto4 = null;
+                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                    return View();
                 }
 
                 hpf = Request.Files[4];
@@ -90,6 +98,8 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto5 = null;
+                    ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                    return View();
                 }
 
             }
@@ -240,6 +250,12 @@ namespace FrozenCritters.Controllers
             return View(Models.FrozenCrittersDb.GetCategory(id));
         }
 
+        [HttpPost]
+        public ActionResult ConfirmRemoveCategory(string id)
+        {
+            return View(Models.FrozenCrittersDb.RemoveCategory(Int32.Parse(id)));
+        }
+
         public ActionResult AdminCategoryPage()
         {
             return View();
@@ -284,22 +300,22 @@ namespace FrozenCritters.Controllers
         [HttpPost]
         public ActionResult AddPhoto(Photos photo)
         {
+            var allowedExtensions = new[] { ".png", ".jpg" };
+
             if (ModelState.IsValid)
             {
+                HttpPostedFileBase hpf = Request.Files[0];
 
-                foreach (string file in Request.Files)
+                hpf = Request.Files[0];
+                var extension = Path.GetExtension(hpf.FileName);
+                if (Request.Files[0].ContentLength > 0 && (allowedExtensions.Contains(extension)))
                 {
-                    HttpPostedFileBase hpf = Request.Files[file] as HttpPostedFileBase;
-                    if (hpf.ContentLength == 0)
-                    {
-                        continue;
-                    }
-                    else
-                    {
-                        string savedFileName = Path.Combine(Server.MapPath("~/Content/img"), Guid.NewGuid() + Path.GetFileName(hpf.FileName));
-                        photo.PhotosFile = savedFileName;
-                        hpf.SaveAs(savedFileName);
-                    }
+                    photo.PhotosFile = Guid.NewGuid() + Path.GetFileName(hpf.FileName);
+                    hpf.SaveAs(Path.Combine(Server.MapPath("//Content/img"), photo.PhotosFile));
+                }
+                else
+                {
+                    photo.PhotosFile = null;
                 }
             }
 
@@ -315,7 +331,7 @@ namespace FrozenCritters.Controllers
         {
             return View();
         }
-
+        
         [HttpGet]
         public ActionResult EditPhoto(Photos photo)
         {
@@ -333,19 +349,19 @@ namespace FrozenCritters.Controllers
         {
             if (ModelState.IsValid)
             {
-
-                foreach (string file in Request.Files)
+                Photos pho = FrozenCrittersDb.GetPhoto(id);
+                if (Request.Files.Count > 0 || Request.Files.Count != 0)
                 {
-                    HttpPostedFileBase hpf = Request.Files[file] as HttpPostedFileBase;
-                    if (hpf.ContentLength == 0)
+                    HttpPostedFileBase hpf = Request.Files[0];
+
+                    if (Request.Files[0].ContentLength > 0)
                     {
-                        continue;
+                        photo.PhotosFile = Guid.NewGuid() + Path.GetFileName(hpf.FileName);
+                        hpf.SaveAs(Path.Combine(Server.MapPath("//Content/img"), photo.PhotosFile));
                     }
                     else
                     {
-                        string savedFileName = Path.Combine(Server.MapPath("~/Content/img"), Guid.NewGuid() + Path.GetFileName(hpf.FileName));
-                        photo.PhotosFile = savedFileName;
-                        hpf.SaveAs(savedFileName);
+                        photo.PhotosFile = pho.PhotosFile;
                     }
                 }
             }
