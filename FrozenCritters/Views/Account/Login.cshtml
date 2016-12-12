@@ -3,7 +3,9 @@
 @{
     ViewBag.Title = "Log in";
 }
-
+<script>
+    window.onpopstate = function () { window.history.forward(1) };
+</script>
 <h2>@ViewBag.Title.</h2>
 <div class="row">
     <div class="col-md-8">

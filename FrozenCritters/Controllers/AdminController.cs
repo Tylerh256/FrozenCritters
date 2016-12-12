@@ -215,23 +215,26 @@ namespace FrozenCritters.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult RemoveCategory(int id)
-        {
-            if (ModelState.IsValid)
-            {
-                if (Models.FrozenCrittersDb.RemoveCategory(id))
-                {
-                    return RedirectToAction("Index", "Admin");
-                }
-            }
-            return View();
-        }
+        //[HttpPost]
+        //public ActionResult RemoveCategory(int id)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (Models.FrozenCrittersDb.RemoveCategory(id))
+        //        {
+        //            return RedirectToAction("Index", "Admin");
+        //        }
+        //    }
+        //    return View();
+        //}
 
         [HttpGet]
-        public ActionResult RemoveCategory(Categories cat, int id)
+        public ActionResult RemoveCategory(int id)
         {
-            return View(FrozenCrittersDb.GetCategory(id));
+            Models.FrozenCrittersDb.RemoveCategory(id);
+
+
+            return View();
         }
 
         [HttpGet]
@@ -323,7 +326,7 @@ namespace FrozenCritters.Controllers
         {
             return View();
         }
-        
+
         [HttpGet]
         public ActionResult EditPhoto(Photos photo)
         {

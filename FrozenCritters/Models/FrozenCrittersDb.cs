@@ -263,6 +263,7 @@ namespace FrozenCritters.Models
             }
         }
 
+        //use parameters to for id
         public static bool RemoveCategory(int id)
         {
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
