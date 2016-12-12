@@ -58,6 +58,10 @@ namespace FrozenCritters.Controllers
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
+            if (User.Identity.IsAuthenticated)
+            {
+                RedirectToAction("Index", "Home");
+            }
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -71,6 +75,10 @@ namespace FrozenCritters.Controllers
         {
             if (!ModelState.IsValid)
             {
+                if (User.Identity.IsAuthenticated)
+                {
+                    RedirectToAction("Index", "Home");
+                }
                 return View(model);
             }
 
