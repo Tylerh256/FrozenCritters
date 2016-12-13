@@ -11,19 +11,19 @@
         <div id="altPhotoContainer">
             @if (Model.ProductsPhoto2 != "")
             {
-                <img id="altPhoto2" class="altPhotos" onmouseover="altPhoto2()" onmouseout="defaultPhoto()" src="/Content/img/@Model.ProductsPhoto2" alt="@Model.ProductsName" />
+                <img class="altPhotos" onmouseover="altPhoto2();" onmouseout="defaultPhoto()" src="/Content/img/@Model.ProductsPhoto2" alt="@Model.ProductsName" />
             }
             @if (Model.ProductsPhoto3 != "")
             {
-                <img id="altPhoto3" class="altPhotos" onmouseover="altPhoto3()" onmouseout="defaultPhoto()" src="/Content/img/@Model.ProductsPhoto3" alt="@Model.ProductsName" />
+                <img class="altPhotos" onmouseover="altPhoto3();" onmouseout=" defaultPhoto()" src="/Content/img/@Model.ProductsPhoto3" alt="@Model.ProductsName" />
             }
             @if (Model.ProductsPhoto4 != "")
             {
-                <img id="altPhoto4" class="altPhotos" onmouseover="altPhoto4()" onmouseout="defaultPhoto()" src="/Content/img/@Model.ProductsPhoto4" alt="@Model.ProductsName" />
+                <img class="altPhotos" onmouseover="altPhoto4();" onmouseout=" defaultPhoto()" src="/Content/img/@Model.ProductsPhoto4" alt="@Model.ProductsName" />
             }
             @if (Model.ProductsPhoto5 != "")
             {
-                <img id="altPhoto5" class="altPhotos" onmouseover="altPhoto5()" onmouseout="defaultPhoto()" src="/Content/img/@Model.ProductsPhoto5" alt="@Model.ProductsName" />
+                <img class="altPhotos" onmouseover="altPhoto5();" onmouseout=" defaultPhoto()" src="/Content/img/@Model.ProductsPhoto5" alt="@Model.ProductsName" />
             }
         </div>
     </div>
@@ -64,11 +64,13 @@
             <input type="hidden" name="return" value="">
             <input type="hidden" name="undefined_quantity" value="1">
             <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/x-click-but22.gif" name="submit" width="87" height="23" alt="Make payments with PayPal - it's fast, free and secure!">
-        </form>    </div>
+        </form>
+    </div>
 </div>
 @section scripts{
-    <script>
 
+
+    <script>
         function defaultPhoto() {
             document.getElementById("mainPhoto").src = "/Content/img/@Model.ProductsPhoto";
 
@@ -76,9 +78,7 @@
 
         function altPhoto2() {
             document.getElementById("mainPhoto").src = "/Content/img/@Model.ProductsPhoto2";
-
         }
-
         function altPhoto3() {
             document.getElementById("mainPhoto").src = "/Content/img/@Model.ProductsPhoto3";
 
@@ -91,9 +91,9 @@
 
         function altPhoto5() {
             document.getElementById("mainPhoto").src = "/Content/img/@Model.ProductsPhoto5";
-
         }
     </script>
+
 }
 
 
