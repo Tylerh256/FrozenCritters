@@ -210,6 +210,30 @@ namespace FrozenCritters.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult CategoryForm(int id)
+        {
+            return View(Models.FrozenCrittersDb.GetCategory(id));
+        }
+
+        [HttpPost]
+        public ActionResult CategoryForm(Categories cat, int id)
+        {
+            if (ModelState.IsValid)
+            {
+                if (FrozenCritters.Models.FrozenCrittersDb.EditCategory(cat, id))
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
+            }
+            return View();
+        }
+
+        public ActionResult EditCategory(Categories cat)
+        {
+            return View();
+        }
+
         public ActionResult RemoveCategoryList()
         {
             return View();

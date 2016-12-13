@@ -312,6 +312,34 @@ namespace FrozenCritters.Models
             return cats;
         }
 
+        public static bool EditCategory(Categories cat, int id)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand editCat = new SqlCommand();
+            editCat.CommandText = "UPDATE Categories SET CategoriesName = @CategoriesName WHERE CategoriesId = " + id;
+            editCat.Connection = con;
+            editCat.Parameters.AddWithValue("@CategoriesName", cat.CategoriesName);
+
+            try
+            {
+                con.Open();
+                int rows = editCat.ExecuteNonQuery();
+                if (rows == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                con.Dispose();
+            }
+        }
+
         public static List<Categories> GetInStockCategories()
         {
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;

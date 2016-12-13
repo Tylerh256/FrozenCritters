@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "EditCategory";
+    var cats = FrozenCritters.Models.FrozenCrittersDb.GetCategories();
+}
+
+<h2>Edit Category</h2>
+@foreach (var cat in cats)
+{
+    <li class="editProductList">@Html.ActionLink(cat.CategoriesName, "CategoryForm", "Admin", new { id = cat.CategoriesId }, null) </li>
+
+}
+
