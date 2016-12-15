@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "RemoveCategoryList";
+    var photos = FrozenCritters.Models.FrozenCrittersDb.GetAllPhotos();
+}
+<h2>Choose a Category to Delete</h2>
+<ul>
+    @foreach (var photo in photos)
+    {
+        <li>
+            <a class="productHover" href="@Url.Action("ConfirmRemovePhoto", "Admin", new { id = photo.PhotosId }, null)">
+                <img src="~/content/img/@photo.PhotosFile" alt="@photo.PhotosName" />
+                <h4 class="productName">@photo.PhotosName</h4>
+            </a>
+        </li>
+    }
+</ul>

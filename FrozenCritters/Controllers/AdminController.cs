@@ -38,11 +38,16 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto = null;
+                    if (Request.Files[0].ContentLength > 0)
+                    {
+                        ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                        return View();
+                    }
                 }
 
                 hpf = Request.Files[1];
                 extension = Path.GetExtension(hpf.FileName);
-                if (Request.Files[0].ContentLength > 0 && (allowedExtensions.Contains(extension)))
+                if (Request.Files[1].ContentLength > 0 && (allowedExtensions.Contains(extension)))
                 {
                     hpf = Request.Files[1];
                     product.ProductsPhoto2 = Guid.NewGuid() + Path.GetFileName(hpf.FileName);
@@ -50,7 +55,13 @@ namespace FrozenCritters.Controllers
                 }
                 else
                 {
+
                     product.ProductsPhoto2 = null;
+                    if (Request.Files[1].ContentLength > 0)
+                    {
+                        ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                        return View();
+                    }
                 }
 
                 hpf = Request.Files[2];
@@ -64,6 +75,11 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto3 = null;
+                    if (Request.Files[2].ContentLength > 0)
+                    {
+                        ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                        return View();
+                    }
                 }
 
                 hpf = Request.Files[3];
@@ -77,6 +93,11 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto4 = null;
+                    if (Request.Files[3].ContentLength > 0)
+                    {
+                        ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                        return View();
+                    }
                 }
 
                 hpf = Request.Files[4];
@@ -90,6 +111,11 @@ namespace FrozenCritters.Controllers
                 else
                 {
                     product.ProductsPhoto5 = null;
+                    if (Request.Files[4].ContentLength > 0)
+                    {
+                        ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                        return View();
+                    }
                 }
 
             }
@@ -121,6 +147,7 @@ namespace FrozenCritters.Controllers
         [HttpPost]
         public ActionResult ProductForm(Products product, int id)
         {
+            var allowedExtensions = new[] { ".png", ".jpg" };
             Products prod = FrozenCritters.Models.FrozenCrittersDb.GetProd(id);
             if (ModelState.IsValid)
             {
@@ -128,18 +155,24 @@ namespace FrozenCritters.Controllers
                 if (Request.Files.Count > 0 || Request.Files.Count != 0)
                 {
                     HttpPostedFileBase hpf = Request.Files[0];
-
-                    if (Request.Files[0].ContentLength > 0)
+                    var extension = Path.GetExtension(hpf.FileName);
+                    if (Request.Files[0].ContentLength > 0 && (allowedExtensions.Contains(extension)))
                     {
                         product.ProductsPhoto = Guid.NewGuid() + Path.GetFileName(hpf.FileName);
                         hpf.SaveAs(Path.Combine(Server.MapPath("//Content/img"), product.ProductsPhoto));
                     }
                     else
                     {
+
+                        if (Request.Files[0].ContentLength > 0)
+                        {
+                            ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                            return View(FrozenCritters.Models.FrozenCrittersDb.GetProd(id));
+                        }
                         product.ProductsPhoto = prod.ProductsPhoto;
                     }
 
-                    if (Request.Files[1].ContentLength > 0)
+                    if (Request.Files[1].ContentLength > 0 && (allowedExtensions.Contains(extension)))
                     {
                         hpf = Request.Files[1];
                         product.ProductsPhoto2 = Guid.NewGuid() + Path.GetFileName(hpf.FileName);
@@ -147,10 +180,15 @@ namespace FrozenCritters.Controllers
                     }
                     else
                     {
+                        if (Request.Files[1].ContentLength > 0)
+                        {
+                            ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                            return View(FrozenCritters.Models.FrozenCrittersDb.GetProd(id));
+                        }
                         product.ProductsPhoto2 = prod.ProductsPhoto2;
                     }
 
-                    if (Request.Files[2].ContentLength > 0)
+                    if (Request.Files[2].ContentLength > 0 && (allowedExtensions.Contains(extension)))
                     {
                         hpf = Request.Files[2];
                         product.ProductsPhoto3 = Guid.NewGuid() + Path.GetFileName(hpf.FileName);
@@ -158,10 +196,15 @@ namespace FrozenCritters.Controllers
                     }
                     else
                     {
+                        if (Request.Files[2].ContentLength > 0)
+                        {
+                            ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                            return View(FrozenCritters.Models.FrozenCrittersDb.GetProd(id));
+                        }
                         product.ProductsPhoto3 = prod.ProductsPhoto3;
                     }
 
-                    if (Request.Files[3].ContentLength > 0)
+                    if (Request.Files[3].ContentLength > 0 && (allowedExtensions.Contains(extension)))
                     {
                         hpf = Request.Files[3];
                         product.ProductsPhoto4 = Guid.NewGuid() + Path.GetFileName(hpf.FileName);
@@ -169,10 +212,15 @@ namespace FrozenCritters.Controllers
                     }
                     else
                     {
+                        if (Request.Files[3].ContentLength > 0)
+                        {
+                            ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                            return View(FrozenCritters.Models.FrozenCrittersDb.GetProd(id));
+                        }
                         product.ProductsPhoto4 = prod.ProductsPhoto4;
                     }
 
-                    if (Request.Files[4].ContentLength > 0)
+                    if (Request.Files[4].ContentLength > 0 && (allowedExtensions.Contains(extension)))
                     {
                         hpf = Request.Files[4];
                         product.ProductsPhoto5 = Guid.NewGuid() + Path.GetFileName(hpf.FileName);
@@ -180,6 +228,11 @@ namespace FrozenCritters.Controllers
                     }
                     else
                     {
+                        if (Request.Files[4].ContentLength > 0)
+                        {
+                            ViewBag.Error = "One of the file types you attempted to upload was incorrect. The file type must be a jpg or png";
+                            return View(FrozenCritters.Models.FrozenCrittersDb.GetProd(id));
+                        }
                         product.ProductsPhoto5 = prod.ProductsPhoto5;
 
                     }
@@ -239,24 +292,10 @@ namespace FrozenCritters.Controllers
             return View();
         }
 
-        //[HttpPost]
-        //public ActionResult RemoveCategory(int id)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        if (Models.FrozenCrittersDb.RemoveCategory(id))
-        //        {
-        //            return RedirectToAction("Index", "Admin");
-        //        }
-        //    }
-        //    return View();
-        //}
-
         [HttpGet]
         public ActionResult RemoveCategory(int id)
         {
             Models.FrozenCrittersDb.RemoveCategory(id);
-
 
             return View();
         }
@@ -290,6 +329,11 @@ namespace FrozenCritters.Controllers
             return View();
         }
 
+        public ActionResult AdminNewsPage()
+        {
+            return View();
+        }
+
         public ActionResult EditNews(News news)
         {
             return View();
@@ -314,6 +358,33 @@ namespace FrozenCritters.Controllers
             }
             return View();
         }
+
+        public ActionResult RemoveNewsList()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult RemoveNews(int id)
+        {
+            Models.FrozenCrittersDb.RemoveNews(id);
+
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult ConfirmRemoveNews(int id)
+        {
+            return View(Models.FrozenCrittersDb.GetNews(id));
+        }
+
+        [HttpPost]
+        public ActionResult ConfirmRemoveNews(string id)
+        {
+            return View(Models.FrozenCrittersDb.RemoveNews(Int32.Parse(id)));
+        }
+
+
         [HttpPost]
         public ActionResult AddPhoto(Photos photo)
         {
@@ -396,6 +467,32 @@ namespace FrozenCritters.Controllers
             return View();
         }
 
+        public ActionResult RemovePhotoList()
+        {
+            ;
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult RemovePhoto(int id)
+        {
+            Models.FrozenCrittersDb.RemovePhoto(id);
+
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult ConfirmRemovePhoto(int id)
+        {
+            return View(Models.FrozenCrittersDb.GetPhoto(id));
+        }
+
+        [HttpPost]
+        public ActionResult ConfirmRemovePhoto(string id)
+        {
+            return View(Models.FrozenCrittersDb.RemovePhoto(Int32.Parse(id)));
+        }
+
         public ActionResult AdminPhotoPage()
         {
             return View();
@@ -438,12 +535,6 @@ namespace FrozenCritters.Controllers
             }
             return View();
         }
-
-        public ActionResult AdminNewsPage()
-        {
-            return View();
-        }
-
         public ActionResult AdminLawsPage()
         {
             return View();

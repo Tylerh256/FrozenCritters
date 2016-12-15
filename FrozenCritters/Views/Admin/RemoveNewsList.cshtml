@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "RemoveNewsList";
+    var news = FrozenCritters.Models.FrozenCrittersDb.GetAllNews();
+}
+
+<h2>Remove News List</h2>
+
+@foreach (var n in news)
+{
+    <li class="editProductList">@Html.ActionLink(n.NewsTitle, "ConfirmRemoveNews", "Admin", new { id = n.NewsId }, null) </li>
+
+}
+
+
+

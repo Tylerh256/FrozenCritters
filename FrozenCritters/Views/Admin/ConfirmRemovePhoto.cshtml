@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "ConfirmRemovePhoto";
+}
+
+<h2>Confirm Remove Photo</h2>
+
+<p>Are you sure you want to remove the @Model.PhotosName photo?</p>
+<p>@Html.ActionLink("Yes", "RemovePhoto", "Admin", new { id = Model.PhotosId }, null) @Html.ActionLink("No", "RemovePhotoList", "Admin")</p>

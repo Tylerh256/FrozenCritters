@@ -235,6 +235,33 @@ namespace FrozenCritters.Models
             }
         }
 
+        public static bool RemoveNews(int id)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand remNews = new SqlCommand();
+            remNews.CommandText = "DELETE FROM News WHERE NewsId = " + id;
+            remNews.Connection = con;
+
+            try
+            {
+                con.Open();
+                int rows = remNews.ExecuteNonQuery();
+                if(rows == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                con.Dispose();
+            }
+        }
+
         public static bool AddCategory(Models.Categories category)
         {
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
@@ -735,6 +762,33 @@ namespace FrozenCritters.Models
                 photos.Add(photo);
             }
             return photos;
+        }
+
+        public static bool RemovePhoto(int id)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand remPhoto = new SqlCommand();
+            remPhoto.CommandText = "DELETE FROM Photos WHERE PhotosId = " + id;
+            remPhoto.Connection = con;
+
+            try
+            {
+                con.Open();
+                int rows = remPhoto.ExecuteNonQuery();
+                if(rows == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                con.Dispose();
+            }
         }
 
         public static bool updateAbout(About about)

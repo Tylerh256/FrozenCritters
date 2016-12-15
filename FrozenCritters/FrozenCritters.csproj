@@ -381,6 +381,12 @@
     <Content Include="Views\Laws\Index.cshtml" />
     <Content Include="Views\Admin\EditCategory.cshtml" />
     <Content Include="Views\Admin\CategoryForm.cshtml" />
+    <Content Include="Views\Admin\RemovePhotoList.cshtml" />
+    <Content Include="Views\Admin\ConfirmRemovePhoto.cshtml" />
+    <Content Include="Views\Admin\RemovePhoto.cshtml" />
+    <Content Include="Views\Admin\RemoveNewsList.cshtml" />
+    <Content Include="Views\Admin\ConfirmRemoveNews.cshtml" />
+    <Content Include="Views\Admin\RemoveNews.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

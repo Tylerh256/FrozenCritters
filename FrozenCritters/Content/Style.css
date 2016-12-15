@@ -397,3 +397,8 @@ ul.galleryPhotos li{
 textarea{
     float:left;
 }
+
+.photoLabel{
+    float:left;
+    font-weight:bold;
+}
