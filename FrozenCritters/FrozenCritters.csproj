@@ -301,6 +301,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\frozencritters - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\frozencritters - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\frozencritters - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -387,6 +388,7 @@
     <Content Include="Views\Admin\RemoveNewsList.cshtml" />
     <Content Include="Views\Admin\ConfirmRemoveNews.cshtml" />
     <Content Include="Views\Admin\RemoveNews.cshtml" />
+    <Content Include="Views\Admin\LawForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

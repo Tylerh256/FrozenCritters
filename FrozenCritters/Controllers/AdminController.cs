@@ -133,7 +133,7 @@ namespace FrozenCritters.Controllers
             return View();
         }
 
-        public ActionResult EditProduct(Products product)
+        public ActionResult EditProduct()
         {
             return View();
         }
@@ -556,7 +556,7 @@ namespace FrozenCritters.Controllers
                     return RedirectToAction("Index", "Admin");
                 }
             }
-            return View();
+            return RedirectToAction("Index", "Admin");
         }
 
         [HttpGet]
@@ -565,16 +565,15 @@ namespace FrozenCritters.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult EditLaw(Laws law, int id)
+        [HttpGet]
+        public ActionResult LawForm(int id)
         {
-            if (ModelState.IsValid)
-            {
-                if (FrozenCritters.Models.FrozenCrittersDb.EditLaw(law, id))
-                {
-                    return RedirectToAction("Index", "Admin");
-                }
-            }
+            return View(Models.FrozenCrittersDb.GetLaw(id));
+        }
+
+        [HttpPost]
+        public ActionResult LawForm(Laws law, int id)
+        {
             return View();
         }
     }

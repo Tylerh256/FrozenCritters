@@ -892,7 +892,6 @@ namespace FrozenCritters.Models
             SqlCommand addnews = new SqlCommand();
             addnews.Connection = con;
             addnews.CommandText = "INSERT INTO Laws (LawsTitle, LawsLink) VALUES(@LawsTitle, @LawsLink)";
-            con.Open();
             addnews.Parameters.AddWithValue("@LawsTitle", law.LawsTitle);
             addnews.Parameters.AddWithValue("@LawsLink", law.LawsLink);
 
@@ -947,14 +946,14 @@ namespace FrozenCritters.Models
 
         public static List<Laws> GetLaws()
         {
-            string conString = WebConfigurationManager.ConnectionStrings["FrozenCritters"].ConnectionString;
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
             SqlConnection con = new SqlConnection(conString);
             SqlCommand getNews = new SqlCommand();
             getNews.Connection = con;
             getNews.CommandText = "SELECT * FROM Laws";
             con.Open();
             SqlDataReader reader = getNews.ExecuteReader();
-            List<Laws> laws = new List<Laws>();
+            var laws = new List<Laws>();
             while (reader.Read())
             {
                 Laws law = new Laws();
