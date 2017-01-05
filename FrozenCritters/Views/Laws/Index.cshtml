@@ -1,7 +1,13 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    var laws = FrozenCritters.Models.FrozenCrittersDb.GetLaws();
 }
 
 <h2>Laws</h2>
+
+@foreach(var law in laws)
+{
+    <p><a href="@law.LawsLink">@law.LawsTitle</a></p>
+}
 

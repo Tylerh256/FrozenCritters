@@ -379,13 +379,6 @@ namespace FrozenCritters.Controllers
         }
 
         [HttpPost]
-        public ActionResult ConfirmRemoveNews(string id)
-        {
-            return View(Models.FrozenCrittersDb.RemoveNews(Int32.Parse(id)));
-        }
-
-
-        [HttpPost]
         public ActionResult AddPhoto(Photos photo)
         {
             var allowedExtensions = new[] { ".png", ".jpg" };
@@ -575,6 +568,26 @@ namespace FrozenCritters.Controllers
         public ActionResult LawForm(Laws law, int id)
         {
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult RemoveLaw(int id)
+        {
+            Models.FrozenCrittersDb.RemoveLaw(id);
+
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult RemoveLawList()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult ConfirmRemoveLaw(int id)
+        {
+            return View(Models.FrozenCrittersDb.GetLaw(id));
         }
     }
 }

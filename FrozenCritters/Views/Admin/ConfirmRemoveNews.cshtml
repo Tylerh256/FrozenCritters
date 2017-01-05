@@ -1,9 +1,7 @@
 ﻿
 @{
-    ViewBag.Title = "ConfirmRemoveNews";
+    ViewBag.Title = "Confirm Remove News";
 }
-
-<h2>Confirm Remove News</h2>
 
 <p>Are you sure you want to remove the @Model.NewsTitle news?</p>
 <p>@Html.ActionLink("Yes", "RemoveNews", "Admin", new { id = Model.NewsId }, null) @Html.ActionLink("No", "RemoveNewsList", "Admin")</p>

@@ -240,14 +240,15 @@ namespace FrozenCritters.Models
             string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
             SqlConnection con = new SqlConnection(conString);
             SqlCommand remNews = new SqlCommand();
-            remNews.CommandText = "DELETE FROM News WHERE NewsId = " + id;
+            remNews.CommandText = "DELETE FROM News WHERE NewsId = @Id";
+            remNews.Parameters.AddWithValue("@Id", id);
             remNews.Connection = con;
 
             try
             {
                 con.Open();
                 int rows = remNews.ExecuteNonQuery();
-                if(rows == 1)
+                if (rows == 1)
                 {
                     return true;
                 }
@@ -575,7 +576,7 @@ namespace FrozenCritters.Models
                 editProd.Parameters.AddWithValue("@ProductsSalePrice", product.ProductsSalePrice);
             }
 
-            if(product.ProductsShippingCharge == null)
+            if (product.ProductsShippingCharge == null)
             {
                 editProd.Parameters.AddWithValue("@ProductsShippingCharge", DBNull.Value);
             }
@@ -584,7 +585,7 @@ namespace FrozenCritters.Models
                 editProd.Parameters.AddWithValue("@ProductsShippingCharge", product.ProductsShippingCharge);
             }
 
-            if(product.ProductsHandlingCharge == null)
+            if (product.ProductsHandlingCharge == null)
             {
                 editProd.Parameters.AddWithValue("@ProductsHandlingCharge", DBNull.Value);
             }
@@ -776,7 +777,7 @@ namespace FrozenCritters.Models
             {
                 con.Open();
                 int rows = remPhoto.ExecuteNonQuery();
-                if(rows == 1)
+                if (rows == 1)
                 {
                     return true;
                 }
@@ -971,15 +972,45 @@ namespace FrozenCritters.Models
             SqlConnection con = new SqlConnection(conString);
             SqlCommand getlaw = new SqlCommand();
             getlaw.Connection = con;
-            getlaw.CommandText = "SELECT LawsId, LawsTitle, LawsLink FROMM laws WHERE LawsId = " + id;
+            getlaw.CommandText = "SELECT LawsId, LawsTitle, LawsLink FROM laws WHERE LawsId = " + id;
             con.Open();
             SqlDataReader reader = getlaw.ExecuteReader();
             Laws law = new Laws();
-            law.LawsId = (int)reader["LawsId"];
-            law.LawsTitle = reader["LawsTitle"].ToString();
-            law.LawsLink = reader["LawsLink"].ToString();
-
+            while (reader.Read())
+            {
+                law.LawsId = (int)reader["LawsId"];
+                law.LawsTitle = reader["LawsTitle"].ToString();
+                law.LawsLink = reader["LawsLink"].ToString();
+            }
             return law;
+        }
+
+        public static bool RemoveLaw(int id)
+        {
+            string conString = WebConfigurationManager.ConnectionStrings["FrozenCrittersDb"].ConnectionString;
+            SqlConnection con = new SqlConnection(conString);
+            SqlCommand remLaw = new SqlCommand();
+            remLaw.CommandText = "DELETE FROM Laws WHERE LawsId = @Id";
+            remLaw.Parameters.AddWithValue("@Id", id);
+            remLaw.Connection = con;
+
+            try
+            {
+                con.Open();
+                int rows = remLaw.ExecuteNonQuery();
+                if (rows == 1)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            finally
+            {
+                con.Dispose();
+            }
         }
     }
 }

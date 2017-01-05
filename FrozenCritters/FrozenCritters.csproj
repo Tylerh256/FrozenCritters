@@ -389,6 +389,9 @@
     <Content Include="Views\Admin\ConfirmRemoveNews.cshtml" />
     <Content Include="Views\Admin\RemoveNews.cshtml" />
     <Content Include="Views\Admin\LawForm.cshtml" />
+    <Content Include="Views\Admin\RemoveLawList.cshtml" />
+    <Content Include="Views\Admin\ConfirmRemoveLaw.cshtml" />
+    <Content Include="Views\Admin\RemoveLaw.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

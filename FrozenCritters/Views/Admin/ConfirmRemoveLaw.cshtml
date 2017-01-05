@@ -1,0 +1,8 @@
+﻿
+@{
+    ViewBag.Title = "Confirm Remove Law";
+}
+
+<p>Are you sure you want to remove the @Model.LawsTitle ?</p>
+<p>@Html.ActionLink("Yes", "RemoveLaw", "Admin", new { id = Model.LawsId }, null) @Html.ActionLink("No", "RemoveLawList", "Admin")</p>
+

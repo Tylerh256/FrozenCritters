@@ -20,7 +20,8 @@
     <div id="bodyWrapper">
         <div id="header">
             <div id="header1">Frozen&nbsp;Critters</div>
-            <p id="header2">Natural&nbsp;History&nbsp;Products</p>
+            <br />
+            <div id="header2">Natural&nbsp;History&nbsp;Products</div>
         </div>
         <ul class="ulnavbar" id="dropdown">
             <li class="linavbar">@Html.ActionLink("Home", "Index", "Home")</li>
@@ -41,6 +42,12 @@
             {
             <li class="linavbar">@Html.ActionLink("Admin", "Index", "Admin")</li> }
         </ul>
+        
+        <div id="navPhone">
+            <a href="#">
+                <img src="~/Content/img/menuicon.png" width="60" height="60" alt="" />
+            </a>
+        </div>
 
         <div class="container body-content">
             @RenderBody()
