@@ -30,3 +30,7 @@ function altPhoto5() {
     document.getElementById("mainPhoto").src = altPhotoFiveSrc;
     alert("altPhoto5");
 }
+
+$('#navPhone').on('click', function () {
+    $('.ulnavbar').slideToggle('slide-down');
+});

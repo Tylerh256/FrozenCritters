@@ -156,6 +156,7 @@ namespace FrozenCritters.Models
                 news.NewsExpirationDate = (DateTime)reader["NewsExpirationDate"];
                 newsList.Add(news);
             }
+            con.Close();
             return newsList;
         }
 
@@ -177,6 +178,7 @@ namespace FrozenCritters.Models
                 news.NewsPostDate = (DateTime)reader["NewsPostDate"];
                 news.NewsExpirationDate = (DateTime)reader["NewsExpirationDate"];
             }
+            con.Close();
             return news;
         }
 
@@ -439,6 +441,7 @@ namespace FrozenCritters.Models
                 prod.CategoriesId = (int)reader["CategoriesId"];
                 prods.Add(prod);
             }
+            con.Close();
             return prods;
         }
 
@@ -471,6 +474,7 @@ namespace FrozenCritters.Models
                 prod.CategoriesId = (int)reader["CategoriesId"];
                 prods.Add(prod);
             }
+            con.Close();
             return prods;
         }
 
@@ -503,6 +507,7 @@ namespace FrozenCritters.Models
                 prod.CategoriesId = (int)reader["CategoriesId"];
                 prods.Add(prod);
             }
+            con.Close();
             return prods;
         }
 
@@ -535,6 +540,7 @@ namespace FrozenCritters.Models
                 prod.ProductsPhoto5 = reader["ProductsPhoto5"].ToString();
                 prod.CategoriesId = (int)reader["CategoriesId"];
             }
+            con.Close();
             return prod;
         }
 
@@ -554,6 +560,7 @@ namespace FrozenCritters.Models
                 prod.ProductsName = reader["ProductsName"].ToString();
                 prod.ProductsQuantity = (int)reader["ProductsQuantity"];
             }
+            con.Close();
             return prod;
         }
 
@@ -740,6 +747,7 @@ namespace FrozenCritters.Models
                 photo.PhotosName = reader["PhotosName"].ToString();
                 photo.PhotosDescription = reader["PhotosDescription"].ToString();
             }
+            con.Close();
             return photo;
         }
 
@@ -762,6 +770,7 @@ namespace FrozenCritters.Models
                 photo.PhotosDescription = reader["PhotosDescription"].ToString();
                 photos.Add(photo);
             }
+            con.Close();
             return photos;
         }
 
@@ -834,6 +843,7 @@ namespace FrozenCritters.Models
             {
                 about.AboutDescription = reader["AboutDescription"].ToString();
             }
+            con.Close();
             return about;
         }
 
@@ -883,6 +893,7 @@ namespace FrozenCritters.Models
                 contact.ContactPhoneNumber = reader["ContactPhoneNumber"].ToString();
                 contact.ContactHours = reader["ContactHours"].ToString();
             }
+            con.Close();
             return contact;
         }
 
@@ -963,6 +974,7 @@ namespace FrozenCritters.Models
                 law.LawsLink = reader["LawsLink"].ToString();
                 laws.Add(law);
             }
+            con.Close();
             return laws;
         }
 
@@ -982,6 +994,7 @@ namespace FrozenCritters.Models
                 law.LawsTitle = reader["LawsTitle"].ToString();
                 law.LawsLink = reader["LawsLink"].ToString();
             }
+            con.Close();
             return law;
         }
 

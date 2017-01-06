@@ -8,6 +8,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     @RenderSection("metatags", false)
     <title>@ViewBag.Title</title>
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
@@ -23,32 +24,31 @@
             <br />
             <div id="header2">Natural&nbsp;History&nbsp;Products</div>
         </div>
-        <ul class="ulnavbar" id="dropdown">
-            <li class="linavbar">@Html.ActionLink("Home", "Index", "Home")</li>
-            <li class="linavbar">
-                <a href="#">Products</a>
-                <ul class="dropdown">
-                    @foreach (var cat in cats)
-                    {
-                        <li class="linavbar">@Html.ActionLink(cat.CategoriesName, "Products", "Products", new { id = cat.CategoriesId }, null)</li>
-                    }
-                </ul>
-            </li>
-            <li class="linavbar">@Html.ActionLink("Gallery", "Gallery", "Gallery")</li>
-            <li class="linavbar">@Html.ActionLink("About", "About", "Home")</li>
-            <li class="linavbar">@Html.ActionLink("Contact", "Contact", "Home")</li>
-            <li class="linavbar">@Html.ActionLink("Laws", "Index", "Laws")</li>
-            @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-            {
-            <li class="linavbar">@Html.ActionLink("Admin", "Index", "Admin")</li> }
-        </ul>
-        
-        <div id="navPhone">
-            <a href="#">
-                <img src="~/Content/img/menuicon.png" width="60" height="60" alt="" />
-            </a>
-        </div>
 
+        <nav>
+            <div class="navPhone">
+            <img id="menuImg"src="~/Content/img/menuicon2.png" width="60" height="60" alt="" />
+            </div>
+            <ul class="ulnavbar" id="dropdown">
+                <li class="linavbar">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="linavbar">
+                    <a href="#">Products</a>
+                    <ul class="dropdown">
+                        @foreach (var cat in cats)
+                        {
+                            <li class="linavbar">@Html.ActionLink(cat.CategoriesName, "Products", "Products", new { id = cat.CategoriesId }, null)</li>
+                        }
+                    </ul>
+                </li>
+                <li class="linavbar">@Html.ActionLink("Gallery", "Gallery", "Gallery")</li>
+                <li class="linavbar">@Html.ActionLink("About", "About", "Home")</li>
+                <li class="linavbar">@Html.ActionLink("Contact", "Contact", "Home")</li>
+                <li class="linavbar">@Html.ActionLink("Laws", "Index", "Laws")</li>
+                @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+            {
+                    <li class="linavbar">@Html.ActionLink("Admin", "Index", "Admin")</li> }
+            </ul>
+        </nav>
         <div class="container body-content">
             @RenderBody()
         </div>
@@ -58,6 +58,7 @@
     </footer>
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Content/main.js"></script>
     @RenderSection("scripts", false)
 </body>
 </html>
