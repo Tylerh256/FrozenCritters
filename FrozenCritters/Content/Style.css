@@ -936,7 +936,7 @@ textarea {
         }
     }
 
-    @media only screen and (min-width:1000px) {
+    @media only screen and (min-width:1001px) {
         body {
             width: 70%;
             margin: 0 auto;

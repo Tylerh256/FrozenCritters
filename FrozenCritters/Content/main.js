@@ -7,10 +7,11 @@ $('.navPhone').on('click', function (e) {
 });
 
 $(window).resize(function () {
-    if ($('.ulnavbar').is(":hidden") && $(window).width() >= 983) {
+    if ($('.ulnavbar').is(":hidden") && $(window).innerWidth() > 983) {
         $('.ulnavbar').show();
     }
-    else if ($(window).width() < 982) {
+    else if ($(window).width() <= 983) {
         $('.ulnavbar').hide();
     }
 });
+
