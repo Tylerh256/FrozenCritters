@@ -1281,6 +1281,35 @@ textarea {
         background-color: white;
     }
 
+            .ulnavbar .linavbar a {
+            display: block;
+            padding: 8px 25px;
+            color: #333;
+            text-decoration: none;
+        }
+
+            .ulnavbar .linavbar a:hover {
+                color: white;
+                background-color: black;
+            }
+
+        .ulnavbar .linavbar ul.dropdown {
+            min-width: 100%;
+            display: none;
+            position: absolute;
+            z-index: 999;
+            left: 0;
+        }
+
+        .ulnavbar .linavbar:hover ul.dropdown {
+            display: block;
+        }
+
+        .ulnavbar .linavbar ul.dropdown .linavbar {
+            display: block;
+        }
+
+
     #photos {
         width: 30vw;
         float: left;
