@@ -67,8 +67,8 @@ a {
     z-index: -1;
 }
 
-#menuImg{
-    width:35px;
+#menuImg {
+    width: 35px;
 }
 /*
 .ulnavbar {
@@ -269,38 +269,16 @@ img {
 }
 
 #indiProductContainer {
-    flex-flow: wrap;
-    justify-content: space-between;
-    min-width: 1000px;
-}
-
-#photos {
-    width: 30vw;
-    float: left;
-}
-
-#mainPhoto {
-    padding-bottom: 10px;
-    width: 30vw;
-}
-
-.altPhotoContainer {
-    flex-flow: wrap;
-    justify-content: space-around;
-}
-
-.altPhotos {
-    width: 6vw;
-}
-
-#productDetails {
-    float: left;
-    width: 500px;
-    padding-left:65px;
-}
-
-#indiProductName {
-    font-size: 3.5vw;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row /* works with row or column */
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    padding-bottom:10vw;
+    /*min-width: 1000px;*/
 }
 
 #indiProductFullPriceSale {
@@ -395,246 +373,60 @@ textarea {
 }
 
 
-    @media only screen and (min-width:320px) {
-        body {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        #header1 {
-            font-family: 'Bell MT';
-            font-size: 7vw;
-            color: black;
-            text-align: center;
-            padding: 0;
-            margin: 0 auto;
-            white-space: nowrap;
-            padding-bottom: 6vw;
-        }
-
-        #myCarousel{
-            margin-top:45px;
-        }
-
-        #header2 {
-            font-family: 'Bell MT';
-            font-size: 2.5vw;
-            color: black;
-            text-align: center;
-            margin-top: -50px;
-        }
-
-        .navPhone{
-            width:5px;
-            height:5px;
-            background-color: #fff;
-        }
-
-        .ulnavbar {
-            padding: 0;
-            list-style: none;
-            font-family: 'Bell MT';
-            background-color: white;
-            font-size: 20px;
-            display:none;
-            overflow:hidden;
-        }
-
-        .linavbar {
-            background-color: white;
-        }
-
-        .ulnavbar .linavbar {
-            position: relative;
-            line-height: 21px;
-        }
-
-        .ulnavbar .linavbar a {
-            display: block;
-            padding: 8px 25px;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .ulnavbar .linavbar a:hover {
-            color: white;
-            background-color: black;
-        }
-
-        .ulnavbar .linavbar ul.dropdown {
-            min-width: 100%; 
-            display: none;
-            position: absolute;
-            z-index: 999;
-            left: 0;
-        }
-
-        .ulnavbar .linavbar:hover ul.dropdown {
-            display: block;
-        }
-
-        .ulnavbar .linavbar ul.dropdown .linavbar {
-            display: block;
-        }
-
-        ul {
-            padding: 0;
-            list-style-type: none;
-        }
-
-       .dropdown .linavbar{
-            background-color:#c9c9c9;
-       }
+@media only screen and (min-width:320px) {
+    body {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
     }
 
-    @media only screen and (min-width:450px){
-        body {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        #myCarousel{
-            margin-top:0;
-        }
-
-        #header1 {
-            font-family: 'Bell MT';
-            font-size: 7vw;
-            color: black;
-            text-align: center;
-            padding: 0;
-            margin: 0 auto;
-            white-space: nowrap;
-            padding-bottom: 6vw;
-        }
-
-        #header2 {
-            font-family: 'Bell MT';
-            font-size: 2.5vw;
-            color: black;
-            text-align: center;
-            margin-top: -50px;
-        }
-
-        .navPhone{
-            width:5px;
-            height:5px;
-            background-color: #fff;
-        }
-
-        .ulnavbar {
-            padding: 0;
-            list-style: none;
-            font-family: 'Bell MT';
-            background-color: white;
-            font-size: 20px;
-            display:none;
-            overflow:hidden;
-        }
-
-        .linavbar {
-            background-color: white;
-        }
-
-        .ulnavbar .linavbar {
-            position: relative;
-            line-height: 21px;
-        }
-
-        .ulnavbar .linavbar a {
-            display: block;
-            padding: 8px 25px;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .ulnavbar .linavbar a:hover {
-            color: white;
-            background-color: black;
-        }
-
-        .ulnavbar .linavbar ul.dropdown {
-            min-width: 100%; 
-            display: none;
-            position: absolute;
-            z-index: 999;
-            left: 0;
-        }
-
-        .ulnavbar .linavbar:hover ul.dropdown {
-            display: block;
-        }
-
-        .ulnavbar .linavbar ul.dropdown .linavbar {
-            display: block;
-        }
-
-        ul {
-            padding: 0;
-            list-style-type: none;
-        }
-
-       .dropdown .linavbar{
-            background-color:#c9c9c9;
-       }
+    #header1 {
+        font-family: 'Bell MT';
+        font-size: 7vw;
+        color: black;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        white-space: nowrap;
+        padding-bottom: 6vw;
     }
 
-    @media only screen and (min-width:480px) {
-        body {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-        }
+    #myCarousel {
+        margin-top: 45px;
+    }
 
-        #myCarousel{
-            margin-top:0;
-        }
+    #header2 {
+        font-family: 'Bell MT';
+        font-size: 2.5vw;
+        color: black;
+        text-align: center;
+        margin-top: -50px;
+    }
 
-        #header1 {
-            font-family: 'Bell MT';
-            font-size: 7vw;
-            color: black;
-            text-align: center;
-            padding: 0;
-            margin: 0 auto;
-            white-space: nowrap;
-            padding-bottom: 3vw;
-        }
+    .navPhone {
+        width: 5px;
+        height: 5px;
+        background-color: #fff;
+    }
 
-        #header2 {
-            font-family: 'Bell MT';
-            font-size: 2.5vw;
-            color: black;
-            text-align: center;
-            margin-top: -50px;
-        }
+    .ulnavbar {
+        padding: 0;
+        list-style: none;
+        font-family: 'Bell MT';
+        background-color: white;
+        font-size: 20px;
+        display: none;
+        overflow: hidden;
+    }
 
-        .navPhone{
-            width:60px;
-            height:60px;
-            background-color: #fff;
-        }
+    .linavbar {
+        background-color: white;
+    }
 
-        .ulnavbar {
-            padding: 0;
-            list-style: none;
-            font-family: 'Bell MT';
-            background-color: white;
-            font-size: 20px;
-            display:none;
-            overflow:hidden;
-        }
-
-        .linavbar {
-            background-color: white;
-        }
-
-        .ulnavbar .linavbar {
-            position: relative;
-            line-height: 21px;
-        }
+    .ulnavbar .linavbar {
+        position: relative;
+        line-height: 21px;
+    }
 
         .ulnavbar .linavbar a {
             display: block;
@@ -643,10 +435,10 @@ textarea {
             text-decoration: none;
         }
 
-        .ulnavbar .linavbar a:hover {
-            color: white;
-            background-color: black;
-        }
+            .ulnavbar .linavbar a:hover {
+                color: white;
+                background-color: black;
+            }
 
         .ulnavbar .linavbar ul.dropdown {
             min-width: 100%;
@@ -664,66 +456,123 @@ textarea {
             display: block;
         }
 
-        ul {
-            padding: 0;
-            list-style-type: none;
-        }
+    ul {
+        padding: 0;
+        list-style-type: none;
     }
 
-    @media only screen and (min-width:600px) {
-        body {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-        }
+    .dropdown .linavbar {
+        background-color: #c9c9c9;
+    }
 
-        #myCarousel{
-            margin-top:0;
-        }
+    #indiProductContainer{
+        flex-flow:wrap;
+        justify-content:space-between;
+    }
 
-        #header1 {
-            font-family: 'Bell MT';
-            font-size: 7vw;
-            color: black;
-            text-align: center;
-            padding: 0;
-            margin: 0 auto;
-            white-space: nowrap;
-            padding-bottom: 2vw;
-        }
+    #photos {
+        width: 50vw;
+        float: left;
+    }
 
-        #header2 {
-            font-family: 'Bell MT';
-            font-size: 2.5vw;
-            color: black;
-            text-align: center;
-            margin-top: -50px;
-        }
+    #mainPhoto {
+        padding-bottom: 10px;
+        width: 50vw;
+    }
 
-        .navPhone{
-            width:60px;
-            height:60px;
-            background-color: #fff;
-        }
+    .altPhotoContainer {
+        flex-flow: wrap;
+        justify-content: space-around;
+    }
 
-        .ulnavbar {
-            padding: 0;
-            list-style: none;
-            font-family: 'Bell MT';
-            background-color: white;
-            font-size: 20px;
-            display:none;
-            overflow:hidden;
-        }
+    .altPhotos {
+        width: 10vw;
+    }
 
-        .linavbar {
-            background-color: white;
-        }
+    #productDetails {
+        width: 50vw;
+    }
 
-        .ulnavbar .linavbar {
-            position: relative;
-            line-height: 21px;
-        }
+    #indiProductSalePrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPriceSale{
+        font-size: 3.5vw;
+    }
+
+    #indiProductQuantity{
+        font-size: 3.5vw;
+    }
+
+    #indiProductDescription{
+        font-size: 3.5vw;
+    }
+
+    #indiProductName {
+        font-size: 3.5vw;
+        float: none;
+    }
+}
+
+@media only screen and (min-width:450px) {
+    body {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #myCarousel {
+        margin-top: 0;
+    }
+
+    #header1 {
+        font-family: 'Bell MT';
+        font-size: 7vw;
+        color: black;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        white-space: nowrap;
+        padding-bottom: 6vw;
+    }
+
+    #header2 {
+        font-family: 'Bell MT';
+        font-size: 2.5vw;
+        color: black;
+        text-align: center;
+        margin-top: -50px;
+    }
+
+    .navPhone {
+        width: 5px;
+        height: 5px;
+        background-color: #fff;
+    }
+
+    .ulnavbar {
+        padding: 0;
+        list-style: none;
+        font-family: 'Bell MT';
+        background-color: white;
+        font-size: 20px;
+        display: none;
+        overflow: hidden;
+    }
+
+    .linavbar {
+        background-color: white;
+    }
+
+    .ulnavbar .linavbar {
+        position: relative;
+        line-height: 21px;
+    }
 
         .ulnavbar .linavbar a {
             display: block;
@@ -732,99 +581,10 @@ textarea {
             text-decoration: none;
         }
 
-        .ulnavbar .linavbar a:hover {
-            color: white;
-            background-color: black;
-        }
-
-        .ulnavbar .linavbar ul.dropdown {
-            min-width: 100%; 
-            display: none;
-            position: absolute;
-            z-index: 999;
-            left: 0;
-        }
-
-        .ulnavbar .linavbar:hover ul.dropdown {
-            display: block;
-        }
-
-        .ulnavbar .linavbar ul.dropdown .linavbar {
-            display: block;
-        }
-
-        ul {
-            padding: 0;
-            list-style-type: none;
-        }
-    }
-
-    @media only screen and (min-width:768px) {
-        body {
-            width: 100%;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        #myCarousel{
-            margin-top:0;
-        }
-
-        #header1 {
-            font-family: 'Bell MT';
-            font-size: 7vw;
-            color: black;
-            text-align: center;
-            padding: 0;
-            margin: 0 auto;
-            white-space: nowrap;
-            padding-bottom: 1vw;
-        }
-
-        #header2 {
-            font-family: 'Bell MT';
-            font-size: 2.5vw;
-            color: black;
-            text-align: center;
-            margin-top: -50px;
-        }
-
-        .navPhone{
-            width:60px;
-            height:60px;
-            background-color: #fff;
-        }
-
-        .ulnavbar {
-            padding: 0;
-            list-style: none;
-            font-family: 'Bell MT';
-            background-color: white;
-            font-size: 20px;
-            display:none;
-            overflow:hidden;
-        }
-
-        .linavbar {
-            background-color: white;
-        }
-
-        .ulnavbar .linavbar {
-            position: relative;
-            line-height: 21px;
-        }
-
-        .ulnavbar .linavbar a {
-            display: block;
-            padding: 8px 25px;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .ulnavbar .linavbar a:hover {
-            color: white;
-            background-color: black;
-        }
+            .ulnavbar .linavbar a:hover {
+                color: white;
+                background-color: black;
+            }
 
         .ulnavbar .linavbar ul.dropdown {
             min-width: 100%;
@@ -842,65 +602,123 @@ textarea {
             display: block;
         }
 
-        ul {
-            padding: 0;
-            list-style-type: none;
-        }
+    ul {
+        padding: 0;
+        list-style-type: none;
     }
 
-    @media only screen and (min-width:800px) {
-        body {
-            width: 70%;
-            margin: 0 auto;
-            padding: 0;
-        }
+    .dropdown .linavbar {
+        background-color: #c9c9c9;
+    }
 
-        #myCarousel{
-            margin-top:0;
-        }
+    #indiProductContainer{
+        flex-flow:wrap;
+        justify-content:space-between;
+    }
 
-        #header1 {
-            font-family: 'Bell MT';
-            font-size: 7vw;
-            color: black;
-            text-align: center;
-            padding: 0;
-            margin: 0 auto;
-            white-space: nowrap;
-        }
+    #photos {
+        width: 50vw;
+        float: left;
+    }
 
-        #header2 {
-            font-family: 'Bell MT';
-            font-size: 2.5vw;
-            color: black;
-            text-align: center;
-            margin-top: -50px;
-        }
+    #mainPhoto {
+        padding-bottom: 10px;
+        width: 50vw;
+    }
 
-        .navPhone{
-            width:60px;
-            height:60px;
-            background-color: #fff;
-        }
+    .altPhotoContainer {
+        flex-flow: wrap;
+        justify-content: space-around;
+    }
 
-        .ulnavbar {
-            padding: 0;
-            list-style: none;
-            font-family: 'Bell MT';
-            background-color: white;
-            font-size: 20px;
-            display:none;
-            overflow:hidden;
-        }
+    .altPhotos {
+        width: 10vw;
+    }
 
-        .linavbar {
-            background-color: white;
-        }
+    #productDetails {
+        width: 50vw;
+    }
 
-        .ulnavbar .linavbar {
-            position: relative;
-            line-height: 21px;
-        }
+    #indiProductSalePrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPriceSale{
+        font-size: 3.5vw;
+    }
+
+    #indiProductQuantity{
+        font-size: 3.5vw;
+    }
+
+    #indiProductDescription{
+        font-size: 3.5vw;
+    }
+
+    #indiProductName {
+        font-size: 3.5vw;
+        float: none;
+    }
+}
+
+@media only screen and (min-width:480px) {
+    body {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #myCarousel {
+        margin-top: 0;
+    }
+
+    #header1 {
+        font-family: 'Bell MT';
+        font-size: 7vw;
+        color: black;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        white-space: nowrap;
+        padding-bottom: 3vw;
+    }
+
+    #header2 {
+        font-family: 'Bell MT';
+        font-size: 2.5vw;
+        color: black;
+        text-align: center;
+        margin-top: -50px;
+    }
+
+    .navPhone {
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+    }
+
+    .ulnavbar {
+        padding: 0;
+        list-style: none;
+        font-family: 'Bell MT';
+        background-color: white;
+        font-size: 20px;
+        display: none;
+        overflow: hidden;
+    }
+
+    .linavbar {
+        background-color: white;
+    }
+
+    .ulnavbar .linavbar {
+        position: relative;
+        line-height: 21px;
+    }
 
         .ulnavbar .linavbar a {
             display: block;
@@ -909,10 +727,10 @@ textarea {
             text-decoration: none;
         }
 
-        .ulnavbar .linavbar a:hover {
-            color: white;
-            background-color: black;
-        }
+            .ulnavbar .linavbar a:hover {
+                color: white;
+                background-color: black;
+            }
 
         .ulnavbar .linavbar ul.dropdown {
             min-width: 100%;
@@ -923,74 +741,583 @@ textarea {
         }
 
         .ulnavbar .linavbar:hover ul.dropdown {
-            display: block; 
+            display: block;
         }
 
         .ulnavbar .linavbar ul.dropdown .linavbar {
             display: block;
         }
 
-        ul {
-            padding: 0;
-            list-style-type: none;
-        }
+    ul {
+        padding: 0;
+        list-style-type: none;
     }
 
-    @media only screen and (min-width:1001px) {
-        body {
-            width: 70%;
-            margin: 0 auto;
-            padding: 0;
+    #indiProductContainer{
+        flex-flow:wrap;
+        justify-content:space-between;
+    }
+
+    #photos {
+        width: 50vw;
+        float: left;
+    }
+
+    #mainPhoto {
+        padding-bottom: 10px;
+        width: 50vw;
+    }
+
+    .altPhotoContainer {
+        flex-flow: wrap;
+        justify-content: space-around;
+    }
+
+    .altPhotos {
+        width: 10vw;
+    }
+
+    #productDetails {
+        width: 50vw;
+    }
+
+    #indiProductSalePrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPriceSale{
+        font-size: 3.5vw;
+    }
+
+    #indiProductQuantity{
+        font-size: 3.5vw;
+    }
+
+    #indiProductDescription{
+        font-size: 3.5vw;
+    }
+
+    #indiProductName {
+        font-size: 3.5vw;
+        float: none;
+    }
+}
+
+@media only screen and (min-width:600px) {
+    body {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #myCarousel {
+        margin-top: 0;
+    }
+
+    #header1 {
+        font-family: 'Bell MT';
+        font-size: 7vw;
+        color: black;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        white-space: nowrap;
+        padding-bottom: 2vw;
+    }
+
+    #header2 {
+        font-family: 'Bell MT';
+        font-size: 2.5vw;
+        color: black;
+        text-align: center;
+        margin-top: -50px;
+    }
+
+    .navPhone {
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+    }
+
+    .ulnavbar {
+        padding: 0;
+        list-style: none;
+        font-family: 'Bell MT';
+        background-color: white;
+        font-size: 20px;
+        display: none;
+        overflow: hidden;
+    }
+
+    .linavbar {
+        background-color: white;
+    }
+
+    .ulnavbar .linavbar {
+        position: relative;
+        line-height: 21px;
+    }
+
+        .ulnavbar .linavbar a {
+            display: block;
+            padding: 8px 25px;
+            color: #333;
+            text-decoration: none;
         }
 
-        #myCarousel{
-            margin-top:0;
+            .ulnavbar .linavbar a:hover {
+                color: white;
+                background-color: black;
+            }
+
+        .ulnavbar .linavbar ul.dropdown {
+            min-width: 100%;
+            display: none;
+            position: absolute;
+            z-index: 999;
+            left: 0;
         }
 
-        #header1 {
-            font-family: 'Bell MT';
-            font-size: 7vw;
-            color: black;
-            text-align: center;
-            padding: 0;
-            margin: 0 auto;
-            white-space: nowrap;
+        .ulnavbar .linavbar:hover ul.dropdown {
+            display: block;
         }
 
-        #header2 {
-            font-family: 'Bell MT';
-            font-size: 2.5vw;
-            color: black;
-            text-align: center;
-            margin-top: -50px;
+        .ulnavbar .linavbar ul.dropdown .linavbar {
+            display: block;
         }
 
-        .navPhone{
-            width:60px;
-            height:60px;
-            background-color: #fff;
-            display:none;      
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    #indiProductContainer{
+        flex-flow:wrap;
+        justify-content:space-between;
+    }
+
+    #photos {
+        width: 50vw;
+        float: left;
+    }
+
+    #mainPhoto {
+        padding-bottom: 10px;
+        width: 50vw;
+    }
+
+    .altPhotoContainer {
+        flex-flow: wrap;
+        justify-content: space-around;
+    }
+
+    .altPhotos {
+        width: 10vw;
+    }
+
+    #productDetails {
+        width: 50vw;
+    }
+
+    #indiProductSalePrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPriceSale{
+        font-size: 3.5vw;
+    }
+
+    #indiProductQuantity{
+        font-size: 3.5vw;
+    }
+
+    #indiProductDescription{
+        font-size: 3.5vw;
+    }
+
+    #indiProductName {
+        font-size: 3.5vw;
+        float: none;
+    }
+}
+
+@media only screen and (min-width:768px) {
+    body {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #myCarousel {
+        margin-top: 0;
+    }
+
+    #header1 {
+        font-family: 'Bell MT';
+        font-size: 7vw;
+        color: black;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        white-space: nowrap;
+        padding-bottom: 1vw;
+    }
+
+    #header2 {
+        font-family: 'Bell MT';
+        font-size: 2.5vw;
+        color: black;
+        text-align: center;
+        margin-top: -50px;
+    }
+
+    .navPhone {
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+    }
+
+    .ulnavbar {
+        padding: 0;
+        list-style: none;
+        font-family: 'Bell MT';
+        background-color: white;
+        font-size: 20px;
+        display: none;
+        overflow: hidden;
+    }
+
+    .linavbar {
+        background-color: white;
+    }
+
+    .ulnavbar .linavbar {
+        position: relative;
+        line-height: 21px;
+    }
+
+        .ulnavbar .linavbar a {
+            display: block;
+            padding: 8px 25px;
+            color: #333;
+            text-decoration: none;
         }
 
-        .ulnavbar{
-            padding: 0;
-            list-style: none;
-            font-family: 'Bell MT';
-            background-color: white;
-            font-size: 20px;
-            display:contents;
-            overflow:hidden;
+            .ulnavbar .linavbar a:hover {
+                color: white;
+                background-color: black;
+            }
+
+        .ulnavbar .linavbar ul.dropdown {
+            min-width: 100%;
+            display: none;
+            position: absolute;
+            z-index: 999;
+            left: 0;
         }
-        
+
+        .ulnavbar .linavbar:hover ul.dropdown {
+            display: block;
+        }
+
+        .ulnavbar .linavbar ul.dropdown .linavbar {
+            display: block;
+        }
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    #indiProductContainer{
+        flex-flow:wrap;
+        justify-content:space-between;
+    }
+
+    #photos {
+        width: 50vw;
+        float: left;
+    }
+
+    #mainPhoto {
+        padding-bottom: 10px;
+        width: 50vw;
+    }
+
+    .altPhotoContainer {
+        flex-flow: wrap;
+        justify-content: space-around;
+    }
+
+    .altPhotos {
+        width: 10vw;
+    }
+
+    #productDetails {
+        width: 50vw;
+    }
+
+    #indiProductSalePrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPriceSale{
+        font-size: 3.5vw;
+    }
+
+    #indiProductQuantity{
+        font-size: 3.5vw;
+    }
+
+    #indiProductDescription{
+        font-size: 3.5vw;
+    }
+
+    #indiProductName {
+        font-size: 3.5vw;
+        float: none;
+    }
+}
+
+@media only screen and (min-width:800px) {
+    body {
+        width: 70%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #myCarousel {
+        margin-top: 0;
+    }
+
+    #header1 {
+        font-family: 'Bell MT';
+        font-size: 7vw;
+        color: black;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        white-space: nowrap;
+    }
+
+    #header2 {
+        font-family: 'Bell MT';
+        font-size: 2.5vw;
+        color: black;
+        text-align: center;
+        margin-top: -50px;
+    }
+
+    .navPhone {
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+    }
+
+    .ulnavbar {
+        padding: 0;
+        list-style: none;
+        font-family: 'Bell MT';
+        background-color: white;
+        font-size: 20px;
+        display: none;
+        overflow: hidden;
+    }
+
+    .linavbar {
+        background-color: white;
+    }
+
+    .ulnavbar .linavbar {
+        position: relative;
+        line-height: 21px;
+    }
+
+        .ulnavbar .linavbar a {
+            display: block;
+            padding: 8px 25px;
+            color: #333;
+            text-decoration: none;
+        }
+
+            .ulnavbar .linavbar a:hover {
+                color: white;
+                background-color: black;
+            }
+
+        .ulnavbar .linavbar ul.dropdown {
+            min-width: 100%;
+            display: none;
+            position: absolute;
+            z-index: 999;
+            left: 0;
+        }
+
+        .ulnavbar .linavbar:hover ul.dropdown {
+            display: block;
+        }
+
+        .ulnavbar .linavbar ul.dropdown .linavbar {
+            display: block;
+        }
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    #indiProductContainer{
+        flex-flow:wrap;
+        justify-content:space-between;
+    }
+
+    #photos {
+        width: 50vw;
+        float: left;
+    }
+
+    #mainPhoto {
+        padding-bottom: 10px;
+        width: 50vw;
+    }
+
+    .altPhotoContainer {
+        flex-flow: wrap;
+        justify-content: space-around;
+    }
+
+    .altPhotos {
+        width: 10vw;
+    }
+
+    #productDetails {
+        width: 50vw;
+    }
+
+    #indiProductSalePrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPrice{
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPriceSale{
+        font-size: 3.5vw;
+    }
+
+    #indiProductQuantity{
+        font-size: 3.5vw;
+    }
+
+    #indiProductDescription{
+        font-size: 3.5vw;
+    }
+
+    #indiProductName {
+        font-size: 3.5vw;
+        float: none;
+    }
+}
+
+@media only screen and (min-width:1001px) {
+    body {
+        width: 70%;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    #myCarousel {
+        margin-top: 0;
+    }
+
+    #header1 {
+        font-family: 'Bell MT';
+        font-size: 7vw;
+        color: black;
+        text-align: center;
+        padding: 0;
+        margin: 0 auto;
+        white-space: nowrap;
+    }
+
+    #header2 {
+        font-family: 'Bell MT';
+        font-size: 2.5vw;
+        color: black;
+        text-align: center;
+        margin-top: -50px;
+    }
+
+    .navPhone {
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+        display: none;
+    }
+
+    .ulnavbar {
+        padding: 0;
+        list-style: none;
+        font-family: 'Bell MT';
+        background-color: white;
+        font-size: 20px;
+        display: contents;
+        overflow: hidden;
+    }
+
         .ulnavbar .linavbar {
             display: inline-block;
             position: relative;
             line-height: 21px;
             text-align: left;
-          
         }
 
-        .dropdown .linavbar{
-            background-color:white;
-        }
+    .dropdown .linavbar {
+        background-color: white;
     }
+
+    #
+
+    #photos {
+        width: 30vw;
+        float: left;
+    }
+
+    #mainPhoto {
+        padding-bottom: 10px;
+        width: 30vw;
+    }
+
+    .altPhotoContainer {
+        flex-flow: wrap;
+        justify-content: space-around;
+    }
+
+    .altPhotos {
+        width: 6vw;
+    }
+
+    #productDetails {
+        float: left;
+        width: 30vw;
+        padding-bottom:10vw;
+    }
+
+    #indiProductName {
+        font-size: 3.5vw;
+        float: none;
+    }
+}
