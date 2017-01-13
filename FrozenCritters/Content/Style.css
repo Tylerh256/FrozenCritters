@@ -1,5 +1,4 @@
-﻿
-a {
+﻿a {
     color: grey;
 }
 
@@ -78,23 +77,19 @@ a {
     background-color: white;
     font-size: 20px;
 }
-
 .linavbar {
     background-color: white;
 }
-
 .ulnavbar .linavbar a {
     display: block;
     padding: 8px 25px;
     color: #333;
     text-decoration: none;
 }
-
  .ulnavbar .linavbar a:hover {
     color: white;
     background-color: black;
 }
-
 .ulnavbar .linavbar ul.dropdown {
     min-width: 100%; 
     display: none;
@@ -102,15 +97,12 @@ a {
     z-index: 999;
     left: 0;
 }
-
 .ulnavbar .linavbar:hover ul.dropdown {
     display: block; 
 }
-
 .ulnavbar .linavbar ul.dropdown .linavbar {
     display: block;
 }
-
 ul {
     padding: 0;
     list-style-type: none;
@@ -123,26 +115,22 @@ ul {
     background-color:white;
     font-size:20px;
 }
-
 ul li{
     display: inline-block;
     position: relative;
     line-height: 21px;
     text-align: left;
 }
-
 ul li a{
     display: block;
     padding: 8px 25px;
     color: #333;
     text-decoration: none;
 }
-
 ul li a:hover{
     color:white;
     background-color:black;
 }
-
 ul li ul.dropdown{
     min-width: 100%; Set width of the dropdown 
     display: none;
@@ -150,11 +138,9 @@ ul li ul.dropdown{
     z-index: 999;
     left: 0;
 }
-
 ul li:hover ul.dropdown{
     display: block;	 Display the dropdown 
 }
-
 ul li ul.dropdown li{
     display: block;
 }*/
@@ -404,8 +390,8 @@ textarea {
     }
 
     .navPhone {
-        width: 5px;
-        height: 5px;
+        width: 60px;
+        height: 60px;
         background-color: #fff;
     }
 
@@ -472,7 +458,7 @@ textarea {
 
     #photos {
         width: 50vw;
-        float: left;
+        margin:0 auto;
     }
 
     #mainPhoto {
@@ -491,6 +477,7 @@ textarea {
 
     #productDetails {
         width: 50vw;
+        margin:0 auto;
     }
 
     #indiProductSalePrice{
@@ -514,7 +501,7 @@ textarea {
     }
 
     #indiProductName {
-        font-size: 3.5vw;
+        font-size: 6vw;
         float: none;
     }
 }
@@ -550,8 +537,8 @@ textarea {
     }
 
     .navPhone {
-        width: 5px;
-        height: 5px;
+        width: 60px;
+        height: 60px;
         background-color: #fff;
     }
 
@@ -618,7 +605,7 @@ textarea {
 
     #photos {
         width: 50vw;
-        float: left;
+        margin:0 auto;
     }
 
     #mainPhoto {
@@ -637,6 +624,7 @@ textarea {
 
     #productDetails {
         width: 50vw;
+        margin:0 auto;
     }
 
     #indiProductSalePrice{
@@ -660,7 +648,7 @@ textarea {
     }
 
     #indiProductName {
-        font-size: 3.5vw;
+        font-size: 6vw;
         float: none;
     }
 }
@@ -760,7 +748,7 @@ textarea {
 
     #photos {
         width: 50vw;
-        float: left;
+        margin:0 auto;
     }
 
     #mainPhoto {
@@ -779,6 +767,7 @@ textarea {
 
     #productDetails {
         width: 50vw;
+        margin:0 auto;
     }
 
     #indiProductSalePrice{
@@ -802,7 +791,7 @@ textarea {
     }
 
     #indiProductName {
-        font-size: 3.5vw;
+        font-size: 6vw;
         float: none;
     }
 }
@@ -902,7 +891,7 @@ textarea {
 
     #photos {
         width: 50vw;
-        float: left;
+        margin:0 auto;
     }
 
     #mainPhoto {
@@ -921,6 +910,7 @@ textarea {
 
     #productDetails {
         width: 50vw;
+        margin:0 auto;
     }
 
     #indiProductSalePrice{
@@ -944,7 +934,7 @@ textarea {
     }
 
     #indiProductName {
-        font-size: 3.5vw;
+        font-size: 6vw;
         float: none;
     }
 }
@@ -1044,7 +1034,7 @@ textarea {
 
     #photos {
         width: 50vw;
-        float: left;
+        margin:0 auto;
     }
 
     #mainPhoto {
@@ -1063,6 +1053,7 @@ textarea {
 
     #productDetails {
         width: 50vw;
+        margin:0 auto;
     }
 
     #indiProductSalePrice{
@@ -1086,7 +1077,7 @@ textarea {
     }
 
     #indiProductName {
-        font-size: 3.5vw;
+        font-size: 6vw;
         float: none;
     }
 }
@@ -1185,7 +1176,7 @@ textarea {
 
     #photos {
         width: 50vw;
-        float: left;
+        margin:0 auto;
     }
 
     #mainPhoto {
@@ -1204,6 +1195,7 @@ textarea {
 
     #productDetails {
         width: 50vw;
+        margin:0 auto;
     }
 
     #indiProductSalePrice{
@@ -1227,7 +1219,7 @@ textarea {
     }
 
     #indiProductName {
-        font-size: 3.5vw;
+        font-size: 6vw;
         float: none;
     }
 }
@@ -1274,7 +1266,7 @@ textarea {
         font-family: 'Bell MT';
         background-color: white;
         font-size: 20px;
-        display: contents;
+        display: unset;
         overflow: hidden;
     }
 
@@ -1288,8 +1280,6 @@ textarea {
     .dropdown .linavbar {
         background-color: white;
     }
-
-    #
 
     #photos {
         width: 30vw;
@@ -1321,3 +1311,7 @@ textarea {
         float: none;
     }
 }
+
+
+
+/*LATEST STYLE SHEET*/
