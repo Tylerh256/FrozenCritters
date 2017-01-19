@@ -263,7 +263,7 @@ img {
     align-items: center;
     -webkit-justify-content: center;
     justify-content: center;
-    padding-bottom:10vw;
+    padding-bottom: 10vw;
     /*min-width: 1000px;*/
 }
 
@@ -451,19 +451,19 @@ textarea {
         background-color: #c9c9c9;
     }
 
-    #indiProductContainer{
-        flex-flow:wrap;
-        justify-content:space-between;
+    #indiProductContainer {
+        flex-flow: wrap;
+        justify-content: space-between;
     }
 
     #photos {
-        width: 50vw;
-        margin:0 auto;
+        width: 80vw;
+        margin: 0 auto;
     }
 
     #mainPhoto {
         padding-bottom: 10px;
-        width: 50vw;
+        width: 80vw;
     }
 
     .altPhotoContainer {
@@ -472,36 +472,36 @@ textarea {
     }
 
     .altPhotos {
-        width: 10vw;
+        width: 15vw;
     }
 
     #productDetails {
         width: 50vw;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
-    #indiProductSalePrice{
+    #indiProductSalePrice {
+        font-size: 6vw;
+    }
+
+    #indiProductFullPrice {
+        font-size: 6vw;
+    }
+
+    #indiProductFullPriceSale {
+        font-size: 6vw;
+    }
+
+    #indiProductQuantity {
         font-size: 3.5vw;
     }
 
-    #indiProductFullPrice{
-        font-size: 3.5vw;
-    }
-
-    #indiProductFullPriceSale{
-        font-size: 3.5vw;
-    }
-
-    #indiProductQuantity{
-        font-size: 3.5vw;
-    }
-
-    #indiProductDescription{
+    #indiProductDescription {
         font-size: 3.5vw;
     }
 
     #indiProductName {
-        font-size: 6vw;
+        font-size: 7vw;
         float: none;
     }
 }
@@ -598,19 +598,19 @@ textarea {
         background-color: #c9c9c9;
     }
 
-    #indiProductContainer{
-        flex-flow:wrap;
-        justify-content:space-between;
+    #indiProductContainer {
+        flex-flow: wrap;
+        justify-content: space-between;
     }
 
     #photos {
-        width: 50vw;
-        margin:0 auto;
+        width: 80vw;
+        margin: 0 auto;
     }
 
     #mainPhoto {
         padding-bottom: 10px;
-        width: 50vw;
+        width: 80vw;
     }
 
     .altPhotoContainer {
@@ -619,36 +619,36 @@ textarea {
     }
 
     .altPhotos {
-        width: 10vw;
+        width: 15vw;
     }
 
     #productDetails {
         width: 50vw;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
-    #indiProductSalePrice{
+    #indiProductSalePrice {
+        font-size: 6vw;
+    }
+
+    #indiProductFullPrice {
+        font-size: 6vw;
+    }
+
+    #indiProductFullPriceSale {
+        font-size: 6vw;
+    }
+
+    #indiProductQuantity {
         font-size: 3.5vw;
     }
 
-    #indiProductFullPrice{
-        font-size: 3.5vw;
-    }
-
-    #indiProductFullPriceSale{
-        font-size: 3.5vw;
-    }
-
-    #indiProductQuantity{
-        font-size: 3.5vw;
-    }
-
-    #indiProductDescription{
+    #indiProductDescription {
         font-size: 3.5vw;
     }
 
     #indiProductName {
-        font-size: 6vw;
+        font-size: 7vw;
         float: none;
     }
 }
@@ -741,19 +741,19 @@ textarea {
         list-style-type: none;
     }
 
-    #indiProductContainer{
-        flex-flow:wrap;
-        justify-content:space-between;
+    #indiProductContainer {
+        flex-flow: wrap;
+        justify-content: space-between;
     }
 
     #photos {
-        width: 50vw;
-        margin:0 auto;
+        width: 80vw;
+        margin: 0 auto;
     }
 
     #mainPhoto {
         padding-bottom: 10px;
-        width: 50vw;
+        width: 80vw;
     }
 
     .altPhotoContainer {
@@ -762,36 +762,36 @@ textarea {
     }
 
     .altPhotos {
-        width: 10vw;
+        width: 15vw;
     }
 
     #productDetails {
         width: 50vw;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
-    #indiProductSalePrice{
+    #indiProductSalePrice {
+        font-size: 6vw;
+    }
+
+    #indiProductFullPrice {
+        font-size: 6vw;
+    }
+
+    #indiProductFullPriceSale {
+        font-size: 6vw;
+    }
+
+    #indiProductQuantity {
         font-size: 3.5vw;
     }
 
-    #indiProductFullPrice{
-        font-size: 3.5vw;
-    }
-
-    #indiProductFullPriceSale{
-        font-size: 3.5vw;
-    }
-
-    #indiProductQuantity{
-        font-size: 3.5vw;
-    }
-
-    #indiProductDescription{
+    #indiProductDescription {
         font-size: 3.5vw;
     }
 
     #indiProductName {
-        font-size: 6vw;
+        font-size: 7vw;
         float: none;
     }
 }
@@ -884,14 +884,14 @@ textarea {
         list-style-type: none;
     }
 
-    #indiProductContainer{
-        flex-flow:wrap;
-        justify-content:space-between;
+    #indiProductContainer {
+        flex-flow: wrap;
+        justify-content: space-between;
     }
 
     #photos {
         width: 50vw;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
     #mainPhoto {
@@ -910,26 +910,26 @@ textarea {
 
     #productDetails {
         width: 50vw;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
-    #indiProductSalePrice{
+    #indiProductSalePrice {
         font-size: 3.5vw;
     }
 
-    #indiProductFullPrice{
+    #indiProductFullPrice {
         font-size: 3.5vw;
     }
 
-    #indiProductFullPriceSale{
+    #indiProductFullPriceSale {
         font-size: 3.5vw;
     }
 
-    #indiProductQuantity{
+    #indiProductQuantity {
         font-size: 3.5vw;
     }
 
-    #indiProductDescription{
+    #indiProductDescription {
         font-size: 3.5vw;
     }
 
@@ -1027,14 +1027,14 @@ textarea {
         list-style-type: none;
     }
 
-    #indiProductContainer{
-        flex-flow:wrap;
-        justify-content:space-between;
+    #indiProductContainer {
+        flex-flow: wrap;
+        justify-content: space-between;
     }
 
     #photos {
         width: 50vw;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
     #mainPhoto {
@@ -1053,26 +1053,26 @@ textarea {
 
     #productDetails {
         width: 50vw;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
-    #indiProductSalePrice{
+    #indiProductSalePrice {
         font-size: 3.5vw;
     }
 
-    #indiProductFullPrice{
+    #indiProductFullPrice {
         font-size: 3.5vw;
     }
 
-    #indiProductFullPriceSale{
+    #indiProductFullPriceSale {
         font-size: 3.5vw;
     }
 
-    #indiProductQuantity{
+    #indiProductQuantity {
         font-size: 3.5vw;
     }
 
-    #indiProductDescription{
+    #indiProductDescription {
         font-size: 3.5vw;
     }
 
@@ -1169,14 +1169,14 @@ textarea {
         list-style-type: none;
     }
 
-    #indiProductContainer{
-        flex-flow:wrap;
-        justify-content:space-between;
+    #indiProductContainer {
+        flex-flow: wrap;
+        justify-content: space-between;
     }
 
     #photos {
         width: 50vw;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
     #mainPhoto {
@@ -1195,26 +1195,26 @@ textarea {
 
     #productDetails {
         width: 50vw;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
-    #indiProductSalePrice{
+    #indiProductSalePrice {
         font-size: 3.5vw;
     }
 
-    #indiProductFullPrice{
+    #indiProductFullPrice {
         font-size: 3.5vw;
     }
 
-    #indiProductFullPriceSale{
+    #indiProductFullPriceSale {
         font-size: 3.5vw;
     }
 
-    #indiProductQuantity{
+    #indiProductQuantity {
         font-size: 3.5vw;
     }
 
-    #indiProductDescription{
+    #indiProductDescription {
         font-size: 3.5vw;
     }
 
@@ -1281,34 +1281,40 @@ textarea {
         background-color: white;
     }
 
-            .ulnavbar .linavbar a {
-            display: block;
-            padding: 8px 25px;
-            color: #333;
-            text-decoration: none;
+    .ulnavbar .linavbar a {
+        display: block;
+        padding: 8px 25px;
+        color: #333;
+        text-decoration: none;
+    }
+
+        .ulnavbar .linavbar a:hover {
+            color: white;
+            background-color: black;
         }
 
-            .ulnavbar .linavbar a:hover {
-                color: white;
-                background-color: black;
-            }
+    .ulnavbar .linavbar ul.dropdown {
+        min-width: 100%;
+        display: none;
+        position: absolute;
+        z-index: 999;
+        left: 0;
+    }
 
-        .ulnavbar .linavbar ul.dropdown {
-            min-width: 100%;
-            display: none;
-            position: absolute;
-            z-index: 999;
-            left: 0;
-        }
+    .ulnavbar .linavbar:hover ul.dropdown {
+        display: block;
+    }
 
-        .ulnavbar .linavbar:hover ul.dropdown {
-            display: block;
-        }
+    .ulnavbar .linavbar ul.dropdown .linavbar {
+        display: block;
+    }
 
-        .ulnavbar .linavbar ul.dropdown .linavbar {
-            display: block;
-        }
 
+    #indiProductContainer {
+        flex-flow: wrap;
+        justify-content: space-between;
+        min-width: 65vw;
+    }
 
     #photos {
         width: 30vw;
@@ -1326,17 +1332,36 @@ textarea {
     }
 
     .altPhotos {
-        width: 6vw;
+        width: 5vw;
     }
 
     #productDetails {
-        float: left;
-        width: 30vw;
-        padding-bottom:10vw;
+        float: right;
+        width: 35vw;
+    }
+
+    #indiProductSalePrice {
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPrice {
+        font-size: 3.5vw;
+    }
+
+    #indiProductFullPriceSale {
+        font-size: 3.5vw;
+    }
+
+    #indiProductQuantity {
+        font-size: 1.5vw;
+    }
+
+    #indiProductDescription {
+        font-size: 1.5vw;
     }
 
     #indiProductName {
-        font-size: 3.5vw;
+        font-size: 4vw;
         float: none;
     }
 }
