@@ -507,87 +507,87 @@ textarea {
 }
 
 @media only screen and (min-width:450px) {
-    body {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0;
-    }
+     body {
+         width: 100%;
+         margin: 0 auto;
+         padding: 0;
+     }
 
-    #myCarousel {
-        margin-top: 0;
-    }
+     #myCarousel {
+         margin-top: 0;
+     }
 
-    #header1 {
-        font-family: 'Bell MT';
-        font-size: 7vw;
-        color: black;
-        text-align: center;
-        padding: 0;
-        margin: 0 auto;
-        white-space: nowrap;
-        padding-bottom: 6vw;
-    }
+     #header1 {
+         font-family: 'Bell MT';
+         font-size: 7vw;
+         color: black;
+         text-align: center;
+         padding: 0;
+         margin: 0 auto;
+         white-space: nowrap;
+         padding-bottom: 6vw;
+     }
 
-    #header2 {
-        font-family: 'Bell MT';
-        font-size: 2.5vw;
-        color: black;
-        text-align: center;
-        margin-top: -50px;
-    }
+     #header2 {
+         font-family: 'Bell MT';
+         font-size: 2.5vw;
+         color: black;
+         text-align: center;
+         margin-top: -50px;
+     }
 
-    .navPhone {
-        width: 60px;
-        height: 60px;
-        background-color: #fff;
-    }
+     .navPhone {
+         width: 60px;
+         height: 60px;
+         background-color: #fff;
+     }
 
-    .ulnavbar {
-        padding: 0;
-        list-style: none;
-        font-family: 'Bell MT';
-        background-color: white;
-        font-size: 20px;
-        display: none;
-        overflow: hidden;
-    }
+     .ulnavbar {
+         padding: 0;
+         list-style: none;
+         font-family: 'Bell MT';
+         background-color: white;
+         font-size: 20px;
+         display: none;
+         overflow: hidden;
+     }
 
-    .linavbar {
-        background-color: white;
-    }
+     .linavbar {
+         background-color: white;
+     }
 
-    .ulnavbar .linavbar {
-        position: relative;
-        line-height: 21px;
-    }
+     .ulnavbar .linavbar {
+         position: relative;
+         line-height: 21px;
+     }
 
-        .ulnavbar .linavbar a {
-            display: block;
-            padding: 8px 25px;
-            color: #333;
-            text-decoration: none;
-        }
+     .ulnavbar .linavbar a {
+         display: block;
+         padding: 8px 25px;
+         color: #333;
+         text-decoration: none;
+     }
 
-            .ulnavbar .linavbar a:hover {
-                color: white;
-                background-color: black;
-            }
+     .ulnavbar .linavbar a:hover {
+         color: white;
+         background-color: black;
+     }
 
-        .ulnavbar .linavbar ul.dropdown {
-            min-width: 100%;
-            display: none;
-            position: absolute;
-            z-index: 999;
-            left: 0;
-        }
+     .ulnavbar .linavbar ul.dropdown {
+         min-width: 100%;
+         display: none;
+         position: absolute;
+         z-index: 999;
+         left: 0;
+     }
 
-        .ulnavbar .linavbar:hover ul.dropdown {
-            display: block;
-        }
+     .ulnavbar .linavbar:hover ul.dropdown {
+         display: block;
+     }
 
-        .ulnavbar .linavbar ul.dropdown .linavbar {
-            display: block;
-        }
+     .ulnavbar .linavbar ul.dropdown .linavbar {
+         display: block;
+     }
 
     ul {
         padding: 0;
@@ -797,87 +797,87 @@ textarea {
 }
 
 @media only screen and (min-width:600px) {
-    body {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0;
-    }
+     body {
+         width: 100%;
+         margin: 0 auto;
+         padding: 0;
+     }
 
-    #myCarousel {
-        margin-top: 0;
-    }
+     #myCarousel {
+         margin-top: 0;
+     }
 
-    #header1 {
-        font-family: 'Bell MT';
-        font-size: 7vw;
-        color: black;
-        text-align: center;
-        padding: 0;
-        margin: 0 auto;
-        white-space: nowrap;
-        padding-bottom: 2vw;
-    }
+     #header1 {
+         font-family: 'Bell MT';
+         font-size: 7vw;
+         color: black;
+         text-align: center;
+         padding: 0;
+         margin: 0 auto;
+         white-space: nowrap;
+         padding-bottom: 2vw;
+     }
 
-    #header2 {
-        font-family: 'Bell MT';
-        font-size: 2.5vw;
-        color: black;
-        text-align: center;
-        margin-top: -50px;
-    }
+     #header2 {
+         font-family: 'Bell MT';
+         font-size: 2.5vw;
+         color: black;
+         text-align: center;
+         margin-top: -50px;
+     }
 
-    .navPhone {
-        width: 60px;
-        height: 60px;
-        background-color: #fff;
-    }
+     .navPhone {
+         width: 60px;
+         height: 60px;
+         background-color: #fff;
+     }
 
-    .ulnavbar {
-        padding: 0;
-        list-style: none;
-        font-family: 'Bell MT';
-        background-color: white;
-        font-size: 20px;
+     .ulnavbar {
+         padding: 0;
+         list-style: none;
+         font-family: 'Bell MT';
+         background-color: white;
+         font-size: 20px;
+         display: none;
+         overflow: hidden;
+     }
+
+     .linavbar {
+         background-color: white;
+     }
+
+     .ulnavbar .linavbar {
+         position: relative;
+         line-height: 21px;
+     }
+
+     .ulnavbar .linavbar a {
+         display: block;
+         padding: 8px 25px;
+         color: #333;
+         text-decoration: none;
+     }
+
+     .ulnavbar .linavbar a:hover {
+         color: white;
+         background-color: black;
+     }
+
+    .ulnavbar .linavbar ul.dropdown {
+        min-width: 100%;
         display: none;
-        overflow: hidden;
+        position: absolute;
+        z-index: 999;
+        left: 0;
     }
 
-    .linavbar {
-        background-color: white;
+    .ulnavbar .linavbar:hover ul.dropdown {
+        display: block;
     }
 
-    .ulnavbar .linavbar {
-        position: relative;
-        line-height: 21px;
+    .ulnavbar .linavbar ul.dropdown .linavbar {
+        display: block;
     }
-
-        .ulnavbar .linavbar a {
-            display: block;
-            padding: 8px 25px;
-            color: #333;
-            text-decoration: none;
-        }
-
-            .ulnavbar .linavbar a:hover {
-                color: white;
-                background-color: black;
-            }
-
-        .ulnavbar .linavbar ul.dropdown {
-            min-width: 100%;
-            display: none;
-            position: absolute;
-            z-index: 999;
-            left: 0;
-        }
-
-        .ulnavbar .linavbar:hover ul.dropdown {
-            display: block;
-        }
-
-        .ulnavbar .linavbar ul.dropdown .linavbar {
-            display: block;
-        }
 
     ul {
         padding: 0;
@@ -1266,7 +1266,7 @@ textarea {
         font-family: 'Bell MT';
         background-color: white;
         font-size: 20px;
-        display: unset;
+        display: initial;
         overflow: hidden;
     }
 
