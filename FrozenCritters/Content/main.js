@@ -7,12 +7,15 @@
 
 $(window).resize(function () {
 
-    if ($('.ulnavbar').is(":hidden") && $(window).innerWidth() > 983) {
-        $('.ulnavbar').removeAttr('style');
+    if ($(".ulnavbar").is(":hidden") && $(window).innerWidth() > 983) {
+        $(".ulnavbar").removeAttr("style");
         $('.ulnavbar').show();
     }
+    else if($(window).innerWidth() > 1000){
+        $(".ulnavbar").css("display", "initial");
+    }
     else if ($(window).width() <= 983) {
-        $('.ulnavbar').hide();
+        $(".ulnavbar").hide();
     }
 });
 
