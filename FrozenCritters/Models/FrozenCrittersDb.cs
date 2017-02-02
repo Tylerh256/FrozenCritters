@@ -188,7 +188,7 @@ namespace FrozenCritters.Models
             SqlConnection con = new SqlConnection(conString);
             SqlCommand getNews = new SqlCommand();
             getNews.Connection = con;
-            getNews.CommandText = "SELECT * FROM News WHERE NewsExpirationDate >= getDate() ORDER BY NewsPostDate DESC";
+            getNews.CommandText = "SELECT * FROM News WHERE NewsExpirationDate > getDate() ORDER BY NewsPostDate DESC";
             con.Open();
             SqlDataReader reader = getNews.ExecuteReader();
             List<News> newsList = new List<News>();

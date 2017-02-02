@@ -3,9 +3,10 @@
     ViewBag.Title = "RemoveLawList";
     var Laws = FrozenCritters.Models.FrozenCrittersDb.GetLaws();
 }
-
-@foreach (var law in Laws)
-{
-    <li class="editProductList">@Html.ActionLink(law.LawsTitle, "ConfirmRemoveLaw", "Admin", new { id = law.LawsId }, null) </li>
-}
-
+<h2>Choose a law to Delete</h2>
+<ul>
+    @foreach (var law in Laws)
+    {
+        <li class="editProductList">@Html.ActionLink(law.LawsTitle, "ConfirmRemoveLaw", "Admin", new { id = law.LawsId }, null) </li>
+    }
+</ul>
