@@ -387,14 +387,18 @@ label {
         justify-content:space-between;
     }
 
+    #mainPhotoContainer{
+        width:75vw;
+    }
+
     #photos {
-        width: 50vw;
+        width: 75vw;
         margin:0 auto;
     }
 
     #mainPhoto {
         padding-bottom: 10px;
-        width: 50vw;
+        width: 75vw;
     }
 
     .altPhotoContainer {
@@ -403,7 +407,7 @@ label {
     }
 
     .altPhotos {
-        width: 10vw;
+        width: 16vw;
     }
 
     #productDetails {
@@ -535,13 +539,13 @@ label {
     }
 
     #photos {
-        width: 50vw;
+        width: 75vw;
         margin:0 auto;
     }
 
     #mainPhoto {
         padding-bottom: 10px;
-        width: 50vw;
+        width: 75vw;
     }
 
     .altPhotoContainer {
@@ -550,7 +554,7 @@ label {
     }
 
     .altPhotos {
-        width: 10vw;
+        width: 16vw;
     }
 
     #productDetails {
@@ -678,13 +682,13 @@ label {
     }
 
     #photos {
-        width: 50vw;
+        width: 75vw;
         margin:0 auto;
     }
 
     #mainPhoto {
         padding-bottom: 10px;
-        width: 50vw;
+        width: 75vw;
     }
 
     .altPhotoContainer {
@@ -693,7 +697,7 @@ label {
     }
 
     .altPhotos {
-        width: 10vw;
+        width: 16vw;
     }
 
     #productDetails {
@@ -820,9 +824,17 @@ label {
         justify-content:space-between;
     }
 
+    #mainPhotoContainer{
+        width:50vw;
+    }
+
     #photos {
         width: 50vw;
         margin:0 auto;
+    }
+
+    #mainPhoto{
+        width: 50vw;
     }
 
     #mainPhoto {
@@ -836,7 +848,7 @@ label {
     }
 
     .altPhotos {
-        width: 10vw;
+        width: 12vw;
     }
 
     #productDetails {
@@ -1155,7 +1167,7 @@ label {
     }
 }
 
-@media only screen and (min-width:1001px) {
+@media only screen and (min-width:1000px) {
     body {
         width: 70%;
         margin: 0 auto;
@@ -1197,16 +1209,16 @@ label {
         font-family: 'Bell MT';
         background-color: white;
         font-size: 20px;
-        display: inline;
+        display: inline !important;
         overflow: hidden;
     }
 
-    .ulnavbar .linavbar {
-       display: inline-block;
-       position: relative;
-       line-height: 21px;
-       text-align: left;
-    }
+        .ulnavbar .linavbar {
+            display: inline-block;
+            position: relative;
+            line-height: 21px;
+            text-align: left;
+        }
 
     .dropdown .linavbar {
         background-color: white;
@@ -1219,10 +1231,10 @@ label {
         text-decoration: none;
     }
 
-    .ulnavbar .linavbar a:hover {
-        color: white;
-        background-color: black;
-    }
+        .ulnavbar .linavbar a:hover {
+            color: white;
+            background-color: black;
+        }
 
     .ulnavbar .linavbar ul.dropdown {
         min-width: 100%;
@@ -1240,15 +1252,18 @@ label {
         display: block;
     }
 
+    #mainPhotoContainer{
+        width:25vw;
+    }
 
     #photos {
-        width: 30vw;
+        width: 25vw;
         float: left;
     }
 
     #mainPhoto {
         padding-bottom: 10px;
-        width: 30vw;
+        width: 25vw;
     }
 
     .altPhotoContainer {
@@ -1263,12 +1278,32 @@ label {
     #productDetails {
         float: left;
         width: 30vw;
-        padding-bottom:10vw;
+        padding-bottom:5vw;
     }
 
     #indiProductName {
         font-size: 3.5vw;
         float: none;
+    }
+
+    #indiProductFullPrice{
+        font-size:3vw;
+    }
+
+    #indiProductSalePrice{
+        font-size:3vw;
+    }
+
+    #indiProductFullPriceSale{
+        font-size:3vw;
+    }
+
+    #indiProductQuantity{
+        font-size:2vw;
+    }
+
+    #indiProductDescription{
+        font-size:1vw;
     }
 }
 
